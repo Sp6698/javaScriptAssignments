@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Assignment Level 03</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <!-- <script src="countries.js">
+        //1. Use the countries information, in the data folder. Sort countries by name, by capital, by population
+
+    </script> -->
+    <!-- <script src="countries.js">
+        //2. *** Find the 10 most spoken languages:F
+        // Your output should look like this
+        // console.log(mostSpokenLanguages(countries, 10))
+        // [
+        //     { country: 'English', count: 91 },
+        //     { country: 'French', count: 45 },
+        //     { country: 'Arabic', count: 25 },
+        //     { country: 'Spanish', count: 24 },
+        //     { country: 'Russian', count: 9 },
+        //     { country: 'Portuguese', count: 9 },
+        //     { country: 'Dutch', count: 8 },
+        //     { country: 'German', count: 7 },
+        //     { country: 'Chinese', count: 5 },
+        //     { country: 'Swahili', count: 4 }
+        // ]
+
+        // // Your output should look like this
+        // console.log(mostSpokenLanguages(countries, 3))
+        // [
+        //     { country: 'English', count: 91 },
+        //     { country: 'French', count: 45 },
+        //     { country: 'Arabic', count: 25 }
+        // ]
+
+    </script> -->
+    <!-- <script src="countries.js">
+        //3. *** Use countries_data.js file create a function which create the ten most populated countries
+
+    </script> -->
+    <script>
+        //4. *** Try to develop a program which calculate measure of central tendency of a 
+        //  sample(mean, median, mode) and measure of variability(range, variance, standard deviation). 
+        //  In addition to those measures find the min, max, count, percentile, and frequency distribution of the sample. 
+        //  You can create an object called statistics and create all the functions which do statistical calculations as 
+        //  method for the statistics object. Check the output below.
+        //  console.log('Count:', statistics.count()) // 25
+        //  console.log('Sum: ', statistics.sum()) // 744
+        //  console.log('Min: ', statistics.min()) // 24
+        //  console.log('Max: ', statistics.max()) // 38
+        //  console.log('Range: ', statistics.range() // 14
+        // console.log('Mean: ', statistics.mean()) // 30
+        // console.log('Median: ', statistics.median()) // 29
+        // console.log('Mode: ', statistics.mode()) // {'mode': 26, 'count': 5}
+        // console.log('Variance: ', statistics.var()) // 17.5
+        // console.log('Standard Deviation: ', statistics.std()) // 4.2
+        // console.log('Variance: ', statistics.var()) // 17.5
+        // console.log('Frequency Distribution: ', statistics.freqDist()) #[(20.0, 26), (16.0, 27),
+        // (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
+        const statistics = {
+            ages: [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26],
+            count: function () { return this.ages.length },
+            sum: function () { return this.ages.reduce((acc, cur) => { return acc + cur }, 0) },
+            min: function () {
+                return this.ages.reduce((acc, cur) => {
+                    if (acc < cur) {
+                        return acc
+                    }
+                    return cur
+                })
+            },
+            max: function () {
+                return this.ages.reduce((acc, cur) => {
+                    if (acc > cur) {
+                        return acc
+                    }
+                    return cur
+                })
+            },
+            range: function () {
+                return this.max() - this.min()
+            },
+            mean: function () {
+                return Math.round(this.sum() / this.count())
+            },
+            median: function () {
+                const mid = Math.floor(this.count() / 2),
+                    nums = [...this.ages].sort((a, b) => a - b);
+                return this.count() % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+            },
+            mode: function () {
+                let obj = {}
+                let ages, count, modeAge, modeCount = 0
+                this.ages.forEach((age) => {
+                    if (obj[age]) {
+                        obj[age]++
+                    } else {
+                        obj[age] = 1
+                    }
+                })
+                for (const key in obj) {
+                    if (obj[key] >= modeCount) {
+                        modeAge = key
+                        modeCount = obj[key]
+                    }
+                }
+                obj = { 'mode': modeAge, 'count': modeCount }
+                return obj
+            },
+            var: function () {
+                let calculateMean = (values) => {
+                    let mean = (values.reduce((sum, current) => sum + current)) / values.length;
+                    return mean;
+                }
+
+                let average = calculateMean(this.ages);
+                let squareDiffs = this.ages.map((value) => {
+                    let diff = value - average;
+                    return diff * diff;
+                });
+                let variance = calculateMean(squareDiffs);
+                return variance;
+            },
+            freqDist: function () {
+                let obj = {}, freqDistArray = []
+                let ages, count, modeAge, modeCount = 0
+                this.ages.forEach((age) => {
+                    if (obj[age]) {
+                        obj[age]++
+                    } else {
+                        obj[age] = 1
+                    }
+                })
+                // console.log(obj)
+                for (const key in obj) {
+                    let freq = (obj[key] / this.count()) * 100
+                    freqDistArray.push({ 'freq':freq, 'age':key })
+                }
+                return freqDistArray.sort((a, b) => {
+                    if (a['freq'] > b['freq']) return -1
+                    if (a['freq'] < b['freq']) return 1
+                    return 0
+                })
+            }
+        }
+        console.log('Count:', statistics.count()) // 25
+        console.log('Sum: ', statistics.sum()) // 744
+        console.log('Min: ', statistics.min()) // 24
+        console.log('Max: ', statistics.max()) // 38
+        console.log('Range: ', statistics.range()) // 14
+        console.log('Mean: ', statistics.mean()) // 30
+        console.log('Median: ', statistics.median()) // 29
+        console.log('Mode: ', statistics.mode()) // {'mode': 26, 'count': 5}
+        console.log('Variance: ', statistics.var()) // 17.5
+        console.log('Frequency Distribution: ', statistics.freqDist()) 
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

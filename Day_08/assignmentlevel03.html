@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Assignment Level 03</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <!-- <script>
+        //1. Create an object literal called personAccount.
+        // It has firstName, lastName, incomes, expenses properties and it has totalIncome,
+        // totalExpense, accountInfo,addIncome, addExpense and accountBalance methods. 
+        //Incomes is a set of incomes and its description and expenses is a set of incomes and its description.
+        const personAccount = {
+            firstName: 'Shubham',
+            lastName: 'Patil',
+            incomes: 15000,
+            expenses: 10000,
+            totalIncome: function() {
+            
+                return 12 * this.incomes
+            },
+            totalExpense:function(){
+                return 12* this.expenses
+            },  
+            accountInfo:function(){
+                return ` Name :- ${this.firstName} ${this.lastName}\n Income p/a:-${this.incomes}\n Expenses:-${this.expenses}`
+            },
+            addIncome:function(exrtraIncome = 0){
+               return this.incomes=this.incomes+exrtraIncome
+            },
+            addExpense:function(extraExpenses = 0){
+               return this.expenses=this.expenses+extraExpenses
+            },
+            accountBalance:function(){
+                return this.incomes-this.expenses
+            }
+        }
+       console.log(personAccount)
+       console.log(personAccount.addExpense())
+
+    </script> -->
+    <script>
+        const users = [
+            {
+                _id: 'ab12ex',
+                username: 'Alex',
+                email: 'alex@alex.com',
+                password: '123123',
+                createdAt: '08/01/2020 9:00 AM',
+                isLoggedIn: false
+            },
+            {
+                _id: 'fg12cy',
+                username: 'Asab',
+                email: 'asab@asab.com',
+                password: '123456',
+                createdAt: '08/01/2020 9:30 AM',
+                isLoggedIn: true
+            },
+            {
+                _id: 'zwf8md',
+                username: 'Brook',
+                email: 'brook@brook.com',
+                password: '123111',
+                createdAt: '08/01/2020 9:45 AM',
+                isLoggedIn: true
+            },
+            {
+                _id: 'eefamr',
+                username: 'Martha',
+                email: 'martha@martha.com',
+                password: '123222',
+                createdAt: '08/01/2020 9:50 AM',
+                isLoggedIn: false
+            },
+            {
+                _id: 'ghderc',
+                username: 'Thomas',
+                email: 'thomas@thomas.com',
+                password: '123333',
+                createdAt: '08/01/2020 10:00 AM',
+                isLoggedIn: false
+            }
+        ];
+
+        const products = [
+            {
+                _id: 'eedfcf',
+                name: 'mobile phone',
+                description: 'Huawei Honor',
+                price: 200,
+                ratings: [
+                    { userId: 'fg12cy', rate: 5 },
+                    { userId: 'zwf8md', rate: 4.5 }
+                ],
+                likes: []
+            },
+            {
+                _id: 'aegfal',
+                name: 'Laptop',
+                description: 'MacPro: System Darwin',
+                price: 2500,
+                ratings: [],
+                likes: ['fg12cy']
+            },
+            {
+                _id: 'hedfcg',
+                name: 'TV',
+                description: 'Smart TV:Procaster',
+                price: 400,
+                ratings: [{ userId: 'fg12cy', rate: 5 }],
+                likes: ['fg12cy']
+            }
+        ]
+    </script>
+    <!-- <script>
+        //2. a.  Create a function called signUp which allows user to add to the collection.
+        //  If user exists, inform the user that he has already an account.
+        newUser = {
+            _id: 'ab12ex',
+            username: 'Alex',
+            email: 'alex@alex.com',
+            password: '123123',
+            createdAt: '08/01/2020 9:00 AM',
+            isLoggedIn: false
+        }
+        function signUp(name, password = '') {
+            let nameFlag = 0, passwordFlag = 0
+            for (const user in users) {
+                if (users[user]['username'] == name) {
+                    nameFlag = 1
+                    if (users[user]['password'] != password) {
+                        // console.log('You Enter Wrong Password')
+                        passwordFlag = 1
+                        break
+                    } else {
+                        // console.log('The user "',name,'"  has already an account.')
+                    }
+                }
+            }
+            if (nameFlag != 0) {
+                if (passwordFlag != 0) {
+                    console.log('You Enter Wrong Password')
+                } else {
+                    console.log('The user "',name,'" has already an account.')
+                }
+            } else {
+                console.log('User is Not exits you can add new User ')
+
+            }
+        }
+        signUp('Alex', '123123')
+    </script> -->
+    <!-- <script>
+        //2. b. Create a function called signIn which allows user to sign in to the application
+        function signIn(name, password) {
+            let nameFlag = 0, passwordFlag = 0
+            for (const user in users) {
+                if (users[user]['username'] == name) {
+                    nameFlag = 1
+                    if (users[user]['password'] == password) {
+                        // console.log('You Enter Wrong Password')
+                        if (users[user]['isLoggedIn']) {
+                            console.log('Is alredy Logged In')
+                            break
+                        }
+                        console.log('Signed In Sucessfully ')
+                    } else {
+
+                        passwordFlag = 1
+                        break
+                        // console.log('The user "',name,'"  has already an account.')
+                    }
+                }
+            }
+            if (nameFlag != 0) {
+                if (passwordFlag == 0) {
+
+                } else {
+                    console.log('You Enter Wrong Password')
+                }
+            } else {
+                console.log('User is Not Found Please Enter Valid Information ')
+
+            }
+        }
+        // signIn('Alex', '123123')
+        signIn('Asab', '123456')
+        </script> -->
+    <!-- <script>
+        //3. The products array has three elements and each of them has six properties. 
+        //   a. Create a function called rateProduct which rates the product
+        function rateProduct(userName, productName, rateInNumber) {
+            let userId = getUserId(userName)
+            // if User is present in the Collection
+             if (userId!=null) {
+                let productId = checkProductName(productName)
+                // if product is present in product collection
+                if (productId!=null) {
+                    // if check the rate is in 1 to 5 range 
+                    if (rateInNumber>0&&rateInNumber<6) {
+                        // added in rating array
+                        return (addRateInProduct(userId,productId,rateInNumber))
+                    }else{
+                        return('Rate NUmber Shuld Be in 1 to 5 Range')
+                    }
+                }else{
+                    return('Product Name Does Not Match Please Enter Valid Product Name')
+                }
+            }else{
+                return('Please Enter Valid User Name')
+            }
+
+        }
+        function getUserId(userName) {
+            for (const user in users) {
+                // if given username matches with user name of collecion 
+                if (users[user]['username'] == userName) {
+                    return users[user]['_id']
+                    
+                }
+            }
+            return null
+        }
+        function checkProductName(name) {
+            
+            for (const product in products) {
+                // if given product name matches with product name of collection 
+                if (products[product]['name']==name) {
+                    return products[product]['_id']
+                }
+            }
+            return null
+        }
+        // adding to rate array of product after all validation
+        function addRateInProduct(userId,productId,rateInNumber){
+            for (const product in products) {
+                if (products[product]['_id']==productId) {
+                    products[product].ratings.push({ userId: userId, rate: rateInNumber })
+                    console.log('Rate Added Succesfully')
+                    return products[product] 
+                }
+            }
+        }
+       console.log( rateProduct('Alex','mobile phone',5))
+    </script> -->
+    <!-- <script>
+        //3. //b. Create a function called averageRating which calculate the average rating of a product
+        function averageRating(productName){
+            let averageRate=0,noOfRates
+            for (const product in products) {
+                if (products[product]['name']==productName) {
+                    let rateArray=(products[product]['ratings'])
+                    noOfRates=rateArray.length
+                    // console.log(rateArray)
+                    for (let index = 0; index < rateArray.length; index++) {
+                        let obj= rateArray[index]
+                        averageRate+= obj.rate
+                    }
+                }
+            }
+            if (averageRate) {
+                return `The average rating of a product is ${averageRate/noOfRates}`
+            }else{
+                return `There is No rates for the Product ${productName}`
+            }
+        }
+        console.log(averageRating('mobile phone'))
+    </script> -->
+    <script>
+        //4. Create a function called likeProduct. This function will helps to like to the product if it is not liked and remove like if it was liked.
+        function likeProduct(userName, productName) {
+            let userId = getUserId(userName)
+            // if User is present in the Collection
+            if (userId != null) {
+                let productId = checkProductName(productName)
+                // if product is present in product collection
+                if (productId != null) {
+                    return productLikeDisLike(userId, productId)
+                } else {
+                    return ('Product Name Does Not Match Please Enter Valid Product Name')
+                }
+            } else {
+                return ('Please Enter Valid User Name')
+            }
+        }
+        function getUserId(userName) {
+            for (const user in users) {
+                // if given username matches with user name of collecion 
+                if (users[user]['username'] == userName) {
+                    return users[user]['_id']
+
+                }
+            }
+            return null
+        }
+        function checkProductName(name) {
+
+            for (const product in products) {
+                // if given product name matches with product name of collection 
+                if (products[product]['name'] == name) {
+                    return products[product]['_id']
+                }
+            }
+            return null
+        }
+        function productLikeDisLike(userId, productId) {
+            let likeFlag = 0,likeArray
+            for (const product in products) {
+                if (products[product]['_id'] == productId) {
+                    likeArray=products[product]['likes']
+                    console.log('The product Likes Array ',likeArray)
+                    if (products[product]['likes'].includes(userId)) {
+                        // console.log(products[product]['likes'])
+                        products[product]['likes'].pop()
+                        likeFlag = 1
+                    } else {
+                        products[product]['likes'].push(userId)
+                    }
+                }
+            }
+            if (likeFlag) {
+                console.log('product is disliked by user')
+                return likeArray
+            } else {
+                console.log('product is liked by user')
+                return likeArray
+            }
+        }
+        console.log(likeProduct('Asab', 'Laptop'))
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

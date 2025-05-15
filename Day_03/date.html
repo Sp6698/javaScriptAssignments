@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Date Object</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<body>
+
+    <script>
+        let now = new Date()
+        console.log(now)
+        console.log(Date())
+        console.log(now.getFullYear())
+        console.log(now.getMonth())
+        console.log(now.getDate())
+        console.log(now.getDay())
+        console.log(now.getHours())
+        console.log(now.getMinutes())
+        console.log(now.getSeconds())
+        console.log(now.getTime())
+        // let str // now.toString()
+        let day = now.getDate()
+        let month = now.getMonth()
+        let year = now.getFullYear()
+        let str = `${day}/${month}/${year}`
+        let date = `${now.getDate()}-${now.getMonth()}-${now.getFullYear()}`
+        let just
+        console.log(str)
+        console.log(date)
+        console.log(just)
+        date = '1998-06-06'
+        just = new Date(date)
+        console.log('string to date object ', just)
+    </script>
+    <script>
+        let myDate = new Date()
+        console.log('my date =',myDate)
+        myDate = new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
+        console.log('my date =',myDate)
+    </script>
+</body>
+
+</html>

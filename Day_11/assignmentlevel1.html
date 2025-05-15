@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Assignment Level 01</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+        const constants = [2.72, 3.14, 9.81, 37, 100]
+        const countries = ['Finland', 'Estonia', 'Sweden', 'Denmark', 'Norway']
+        const rectangle = {
+            width: 20,
+            height: 10,
+            area: 200,
+            perimeter: 60
+        }
+       
+    </script>
+    <script>
+        //1. Destructure and assign the elements of constants array to e, pi, gravity, humanBodyTemp, waterBoilingTemp.
+        let [e, pi, gravity, humanBodyTemp, waterBoilingTemp]=constants
+        console.log(e, pi, gravity, humanBodyTemp, waterBoilingTemp)
+    </script>
+    <script>
+        //2. Destructure and assign the elements of countries array to fin, est, sw, den, nor
+        let [fin, est, sw, den, nor]=countries
+        console.log(fin, est, sw, den, nor)
+    </script>
+    <script>
+        //3. Destructure the rectangle object by its properties or keys.
+        let {width,height,area,perimeter}=rectangle
+        console.log(width,height,area,perimeter)
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

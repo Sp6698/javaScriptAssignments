@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Assignment Level 02</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+        const users = [
+            {
+                name: 'Brook',
+                scores: 75,
+                skills: ['HTM', 'CSS', 'JS'],
+                age: 16
+            },
+            {
+                name: 'Alex',
+                scores: 80,
+                skills: ['HTM', 'CSS', 'JS'],
+                age: 18
+            },
+            {
+                name: 'David',
+                scores: 75,
+                skills: ['HTM', 'CSS'],
+                age: 22
+            },
+            {
+                name: 'John',
+                scores: 85,
+                skills: ['HTML'],
+                age: 25
+            },
+            {
+                name: 'Sara',
+                scores: 95,
+                skills: ['HTM', 'CSS', 'JS'],
+                age: 26
+            },
+            {
+                name: 'Martha',
+                scores: 80,
+                skills: ['HTM', 'CSS', 'JS'],
+                age: 18
+            },
+            {
+                name: 'Thomas',
+                scores: 90,
+                skills: ['HTM', 'CSS', 'JS'],
+                age: 20
+            }
+        ] 
+    </script>
+    <script>
+        //1. Iterate through the users array and get all the keys of the object using destructuring
+        let keys
+        users.forEach((user) => {
+            const { name, scores, skills, age } = user;
+            keys = Object.keys(user);
+        });
+        
+        const [...args]=keys
+        console.log('The kes Are',args)
+    </script>
+    <script>
+        //2. Find the persons who have less than two skills
+        let persons=[]
+        users.forEach((user) => {
+            const { name, scores, skills, age } = user;
+            if (skills.length<2) {
+                persons.push(name)
+            }
+        });
+        console.log('The persons have less than two skills are',persons)
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

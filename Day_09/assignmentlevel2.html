@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Assignment Level 02</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+        const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
+        const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
+        // const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        const products = [
+            { product: 'banana', price: 3 },
+            { product: 'mango', price: 6 },
+            { product: 'potato', price: ' ' },
+            { product: 'avocado', price: 8 },
+            { product: 'coffee', price: 10 },
+            { product: 'tea', price: '' },
+        ]
+    </script>
+    <!-- <script>
+        //1. Find the total price of products by chaining two or more array iterators
+        //(eg. arr.map(callback).filter(callback).reduce(callback))
+        let totalPrice = products.map((product) => {
+            return product.price
+        }).filter((product) => {
+            return (typeof (product) == "number")
+        }).reduce((actual, price) => {
+            return actual + price
+        }, 0)
+        console.log(totalPrice)
+    </script> -->
+    <!-- <script>
+        //2. Find the sum of price of products using only reduce reduce(callback))
+        let totalPrice=products.reduce((accumulator,price,index)=>{
+            if (typeof(price.price)=='number') {
+                // console.log('hi')
+                return accumulator +parseInt( price.price)
+            }
+            return accumulator +0
+        },0)
+        console.log('Sum Of all Price is',totalPrice)
+    </script> -->
+    <!-- <script src="countries.js">
+        //3. Declare a function called categorizeCountries which returns an array of countries which have some common pattern
+        //(you find the countries array in this repository as countries.js(eg 'land', 'ia', 'island','stan')).
+        // let array=countries.filter((country)=>{return country.includes('land')})
+        // console.log(array)
+    </script> -->
+    <!-- <script src="countries.js"> 
+        //4. Create a function which return an array of objects,
+        //  which is the letter and the number of times the letter use to start with a name of a country.
+    </script> -->
+    <!-- <script src="countries.js">
+        //5. Declare a getFirstTenCountries function and return an array of ten countries. 
+        // Use different functional programming to work on the countries.js array
+    </script> -->
+    <!-- <script src="countries.js">
+        //6. Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
+    </script> -->
+    <script src="countries.js">
+        //7. Find out which letter is used many times as initial for a country name from the countries array (eg. Finland, Fiji, France etc)
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

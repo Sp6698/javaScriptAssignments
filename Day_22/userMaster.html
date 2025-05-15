@@ -1,0 +1,2830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Master</title>
+    <link rel="stylesheet" href="./userRoleCreation.css">
+    <style>
+        .detailsHeader.mainRoute {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .detailsHeader {
+            margin-bottom: 10px;
+        }
+
+        .mainRoute {
+            border: 2px solid black;
+            display: inline-flex;
+            flex-direction: column;
+            width: 18vw;
+            height: 40vh;
+            margin: 10px;
+        }
+
+        .purchase .mainRoute {
+            background-color: rgb(89 206 217 / 74%);
+        }
+
+        .master .mainRoute {
+            background-color: rgb(137 197 79 / 84%);
+        }
+
+        .sale .mainRoute {
+            background-color: #58ca88f1;
+        }
+
+        .transaction .mainRoute {
+            background-color: rgba(165, 112, 193, 0.937);
+        }
+
+        .material .mainRoute {
+            background-color: rgb(116 191 227 / 74%);
+        }
+
+        .administrative .mainRoute {
+            background-color: rgba(188, 190, 87, 0.508)
+        }
+
+        .TempHRMModules .mainRoute {
+            background-color: rgba(215, 104, 117, 0.508);
+
+        }
+
+        .PermanentHRMModule .mainRoute {
+            background-color: rgb(229 163 108);
+
+        }
+
+        .CRM .mainRoute {
+            background-color: rgb(69, 165, 165);
+
+        }
+
+        .select-one {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            width: 15px;
+            height: 15px;
+        }
+
+        .mainRoute-heading {
+            font-size: 1rem;
+        }
+
+        .selectors {
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .multipleSelecters {
+            display: inline-flex;
+        }
+
+        .description {
+            width: max-content;
+
+        }
+
+        input.largerCheckbox {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        summary {
+            padding: 5px;
+        }
+
+        .mainRoute-heading {
+            border: 2px solid black;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+
+        /* Remove the default triangle */
+        details>summary {
+            display: block;
+        }
+
+        /* Create a new custom triangle on the right side */
+        details>summary::after {
+            margin-left: 2ch;
+            display: inline-block;
+            content: '▶';
+            transition: 0.2s;
+        }
+
+        details[open]>summary::after {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <br><br>
+    <center>
+        <h2>User Master </h2>
+    </center>
+    <div id="roleAuthentication">
+        <!-- Purchase Modules -->
+        <details class="purchase detailsHeader"
+            style="background-color: rgba(190, 235, 255, 0.74) ; border: 2px solid; text-align :center;">
+            <summary style="font-size: x-large;">Purchase</summary>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Supplier Purchase Order</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/inward/purchaseOrder"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="purchaseOrder"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="purchaseOrder"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="purchaseOrder"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/inward/printPO/"></input>
+                        <label class="route-description">Print PO</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET" data-route="/sendMail/mail"></input>
+                        <label class="route-description">Send PO Mail </label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>GST Purchase</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/inward/gstPurchase"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/inward/saveGSTPurchase"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/inward/modifyGSTPurchase"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/inward/deleteGSTPurchase"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/inward/authenticationGstPurchase"></input>
+                        <label class="route-description">Authentication</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Other GST Inputs</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/inward/otherGstInputs"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/inward/saveOtherGSTInputs"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/inward/modifyOtherGSTInputs"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/inward/deleteOtherGSTInputs"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/inward/authenticationOtherGstInput"></input>
+                        <label class="route-description">Authentication</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Payment Voucher</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/inward/paymentVoucher"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/inward/saveReverseCharge"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/inward/modifyReverseCharge"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/inward/deleteReverseCharge"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/inward/authenticationReverseCharge"></input>
+                        <label class="route-description">Authentication</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Reverse Charge</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/inward/reverseCharge"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/inward/saveReverseCharge"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/inward/modifyReverseCharge"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/inward/deleteReverseCharge"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/inward/authenticationReverseCharge"></input>
+                        <label class="route-description">Authentication</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>RC Cash Transportation</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/inward/rcmCashTransportation"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/inward/saveRcmCashTransportation"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/inward/modifyRcmCashTransportation"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/inward/deleteRcmCashTransportation"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/inward/authenticationRcmCashTransportation"></input>
+                        <label class="route-description">Authentication</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/inward/printRcmCashTransportation/"></input>
+                        <label class="route-description">Print</label>
+                    </div>
+                </div>
+            </div>
+        </details>
+        <details class="master detailsHeader"
+            style="background-color: rgba(204, 243, 168, 0.842) ; border: 2px solid; text-align :center;">
+            <summary style="font-size: x-large;">Masters</summary>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Account Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/master/accountMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="accountMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="accountMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/master/deleteAccount"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Accounting Group Code Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/master/groupCodeMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="groupCodeMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="groupCodeMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="groupCodeMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Part Main Group Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/master/mainGroupMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="mainGroupMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="mainGroupMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="mainGroupMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Part Sub Group Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/master/subGroupMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="subGroupMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="subGroupMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="subGroupMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Unit Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/master/unitMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="unitMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="unitMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="unitMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Process Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/master/processMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="processMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="processMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="processMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>GST Rate Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/master/gstRateMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="gstRateMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="gstRateMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="gstRateMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Sale Item Specification Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/master/specificationMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="specificationMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="specificationMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="specificationMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Process Entry Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/master/processEntryMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/master/saveProcessEntry"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/master/modifyProcessEntry"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/master/deleteProcessEntry"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Part Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/master/partMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="partMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="partMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="partMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>HSN Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/master/hsnMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="hsnMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="hsnMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="hsnMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>SHN Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/master/shnMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="shnMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="shnMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="shnMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Part Rate Change</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/master/partRateChange"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/master/partRateChange"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Sale Item Pattern Type Update</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/master/partPatternUpdate"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/master/partPatternUpdate"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Purchase Part Group Code Change</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/master/partGroupCodeChange"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/master/partGroupCodeChange"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                </div>
+            </div>
+        </details>
+        <details class="sale detailsHeader"
+            style="background-color: #91d6aef1 ; border: 2px solid; text-align :center;">
+            <summary style="font-size: x-large;">Sales</summary>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Sale Order</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/outward/saleOrder"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="saleOrder"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="saleOrder"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="saleOrder"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>GST Proforma Invoice</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/outward/gstProformaInvoice"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common3/save"
+                            data-collection="gstProformaInvoice"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common3/modify"
+                            data-collection="gstProformaInvoice"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common3/delete"
+                            data-collection="gstProformaInvoice"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/outward/printGstProformaInvoiceReport/"></input>
+                        <label class="route-description">Print</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute" style="width: 25vw !important;">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>GST Invoice</a>
+                </summary>
+                <div class="multipleSelecters">
+                    <div class="selectors">
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="GET"
+                                data-route="/outward/gstInvoice"></input>
+                            <label class="route-description">View Authority</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/outward/saveGSTInvoice"></input>
+                            <label class="route-description">Save data</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/outward/modifyGSTInvoice"></input>
+                            <label class="route-description">Update data</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/outward/deleteGSTInvoice"></input>
+                            <label class="route-description">Delete data</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="GET"
+                                data-route="/outward/printGstInvoiceReport/"></input>
+                            <label class="route-description">Print GSTInvoice</label>
+                        </div>
+                    </div>
+                    <div class="selectors">
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/outward/authenticationGstInvoice"></input>
+                            <label class="route-description">Authentication</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/outward/gstInvoice/finalUpload"></input>
+                            <label class="route-description">Create E-Invoice</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/outward/gstInvoice/cnlEInv"></input>
+                            <label class="route-description">Cancel E-Invoice</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/outward/gstInvoice/finalUploadGstInvoice"></input>
+                            <label class="route-description">Create EWayBill</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/outward/gstInvoice/cnlEwayBill"></input>
+                            <label class="route-description">Cancel EWayBill</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Export Invoice</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/outward/exportInvoice"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/outward/saveExportInvoice"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/outward/modifyExportInvoice"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/outward/deleteExportInvoice"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/outward/printExportInvoiceReport/"></input>
+                        <label class="route-description">Print</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute" style="width: 25vw !important;">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Pattern Challan</a>
+                </summary>
+                <div class="multipleSelecters">
+                    <div class="selectors">
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="GET"
+                                data-route="/outward/patternChallan"></input>
+                            <label class="route-description">View Authority</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                                data-collection="patternChallan"></input>
+                            <label class="route-description">Save data</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                                data-collection="patternChallan"></input>
+                            <label class="route-description">Update data</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                                data-collection="patternChallan"></input>
+                            <label class="route-description">Delete data</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/outward/patternChallan/finalUpload"></input>
+                            <label class="route-description">Create EWayBill</label>
+                        </div>
+                    </div>
+                    <div class="selectors">
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/outward/patternChallan/cnlEwayBill"></input>
+                            <label class="route-description">Cancel EWayBill</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="GET"
+                                data-route="/outward/printPatternChallan/"></input>
+                            <label class="route-description">Print</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute" style="width: 25vw !important;">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Delivery Challan Issue</a>
+                </summary>
+                <div class="multipleSelecters">
+                    <div class="selectors">
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="GET"
+                                data-route="/outward/deliveryChallanIssue"></input>
+                            <label class="route-description">View Authority</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/outward/saveDCIssue"></input>
+                            <label class="route-description">Save data</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/outward/modifyDCIssue"></input>
+                            <label class="route-description">Update data</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/outward/deleteDCIssue"></input>
+                            <label class="route-description">Delete data</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="GET"
+                                data-route="/outward/printDCIssue/"></input>
+                            <label class="route-description">Print DCIssue</label>
+                        </div>
+                    </div>
+                    <div class="selectors">
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/outward/dcIssueAuthentication"></input>
+                            <label class="route-description">Authentication</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/outward/deliveryChallanIssue/finalUpload"></input>
+                            <label class="route-description">Create EWayBill</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/outward/deliveryChallanIssue/cnlEwayBill"></input>
+                            <label class="route-description">Cancel EWayBill</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Delivery Challan Receipt</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/outward/deliveryChallanReceipt"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/outward/saveDCReceipt"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/outward/modifyDCReceipt"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/outward/deleteDCReceipt"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/outward/printDCReceipt/"></input>
+                        <label class="route-description">Print DCReceipt</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/outward/dcReceiptAuthentication"></input>
+                        <label class="route-description">Authentication</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Quotation</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/outward/quotation"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/outward/quotation/save" data-collection="quotationNew"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/outward/quotation/modify" data-collection="quotationNew"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="quotationNew"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/outward/printQuotationReport/" data-collection="quotationNew"></input>
+                        <label class="route-description">Print Quotation</label>
+                    </div>
+                </div>
+            </div>
+        </details>
+        <details class="transaction detailsHeader"
+            style="background-color: rgb(204, 173, 221) ; border: 2px solid; text-align :center;">
+            <summary style="font-size: x-large;">Transactions</summary>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Bank Payment</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/transaction/bankPayment"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/saveBankPayment"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/modifyBankPayment"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/deleteBankPayment"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/authenticationBankPayment"></input>
+                        <label class="route-description">Authentication</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Bank Receipt</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/transaction/bankReceipt"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/saveBankReceipt"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/modifyBankReceipt"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/deleteBankReceipt"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/authenticationBankReceipt"></input>
+                        <label class="route-description">Authentication</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute" style="width: 26vw !important;">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>DebitCredit Note</a>
+                </summary>
+                <div class="multipleSelecters">
+                    <div class="selectors">
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="GET"
+                                data-route="/transaction/debitCreditNote"></input>
+                            <label class="route-description">View Authority</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/transaction/saveDebitCreditNote"></input>
+                            <label class="route-description">Save data</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/transaction/modifyDebitCreditNote"></input>
+                            <label class="route-description">Update data</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/transaction/deleteDebitCreditNote"></input>
+                            <label class="route-description">Delete data</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/transaction/authenticationDebitCreditNote"></input>
+                            <label class="route-description">Authentication</label>
+                        </div>
+                    </div>
+                    <div class="selectors">
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/transaction/gstCn/finalUpload"></input>
+                            <label class="route-description">Credit Note Upload</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/transaction/gstCn/cancelCn"></input>
+                            <label class="route-description">Cancel Credit Note</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="GET"
+                                data-route="/transaction/printDebitCreditNote"></input>
+                            <label class="route-description">Print DebitCredit Note</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute" style="width: 25vw !important;">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Cheque Printing</a>
+                </summary>
+                <div class="multipleSelecters">
+                    <div class="selectors">
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="GET"
+                                data-route="/transaction/chequePrinting"></input>
+                            <label class="route-description">View Authority</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/transaction/saveChequePrinting"></input>
+                            <label class="route-description">Save data</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/transaction/modifyChequePrinting"></input>
+                            <label class="route-description">Update data</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/transaction/deletechequePrinting"></input>
+                            <label class="route-description">Delete data</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="GET"
+                                data-route="/transaction/chequePrint/"></input>
+                            <label class="route-description">Cheque Print</label>
+                        </div>
+                    </div>
+                    <div class="selectors">
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="GET"
+                                data-route="/transaction/chequePrintList/"></input>
+                            <label class="route-description">Cheque Print List</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/transaction/authenticationChequePrinting"></input>
+                            <label class="route-description">Authentication</label>
+                        </div>
+                        <div class="description">
+                            <input type="checkbox" class="select-one" data-method="POST"
+                                data-route="/transaction/chequePrintingSendMail"></input>
+                            <label class="route-description">Send Mail</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Journal Voucher</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/transaction/journalVoucher"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/saveJournalVoucher"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/modifyJournalVoucher"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/deleteJournalVoucher"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/authenticationJournalVoucher"></input>
+                        <label class="route-description">Authentication</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Account Payable</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/transaction/accountPayable"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/saveAccountPayable"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/modifyAccountPayable"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/deleteAccountPayable"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/authenticateAccountPayable"></input>
+                        <label class="route-description">Authentication</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Export ApAr</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/transaction/exportApAr"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/saveExportApAr"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/modifyExportApAr"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/deleteExportApAr"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>LCPostEntry</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/transaction/LCPostEntry"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="LCPostEntry"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="LCPostEntry"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="LCPostEntry"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/transaction/LCPostedReport"></input>
+                        <label class="route-description">Pending LC Posted Report</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Cash Transaction</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/transaction/cashTransaction"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/saveCashTransaction"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/modifyCashTransaction"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/deleteCashTransaction"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/transaction/printCashTransaction/"></input>
+                        <label class="route-description">Print CashTransaction</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/authenticationCashTransaction"></input>
+                        <label class="route-description">Authentication</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Cash Box</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/transaction/cashBox"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/saveAmount"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Cash Exchange</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/transaction/cashExchange"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/saveCashExchangeData"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Bank Reconsilation</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/transaction/bankReconsilation"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/bankReconsilation"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>GST CN Allocation</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/transaction/gstCnAllocation"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/saveCnAllocation"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/modifyCnAllocation"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/deleteCnAllocation"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/authenticateGstCnAllocation"></input>
+                        <label class="route-description">Authentication</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Bill Adjustment</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/transaction/billAdjustment"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/transaction/saveAdjustedBill"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                </div>
+            </div>
+        </details>
+        <details class="material detailsHeader"
+            style="background-color: rgba(171, 211, 230, 0.74) ; border: 2px solid; text-align :center;">
+            <summary style="font-size: x-large;">Material</summary>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Heat Mixing</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/material/heatMixing"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="heatMixing"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="heatMixing"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="heatMixing"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Heat Specification</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/material/heatSpecification"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common3/save"
+                            data-collection="heatSpecification"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common3/modify"
+                            data-collection="heatSpecification"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common3/delete"
+                            data-collection="heatSpecification"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/material/printHeatSpecification/"></input>
+                        <label class="route-description">Print</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Inventory Consumption</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/material/inventoryConsumption"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/material/saveInventoryConsumption"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/material/modifyInventoryConsumption"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/material/deleteInventoryConsumption"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Stock Correction</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/material/stockCorrection"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/material/saveStockCorrection"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/material/deleteStockCorrection"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Closing Stock</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/material/closingStock"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common2/save"
+                            data-collection="closingStock"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common2/modify"
+                            data-collection="closingStock"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common2/delete"
+                            data-collection="closingStock"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Stock Report</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/material/stockReport"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Material Consumption Dashboard</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/material/inventoryDashboard"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                </div>
+            </div>
+
+        </details>
+        <details class="administrative detailsHeader"
+            style="background-color: rgb(225, 226, 134) ; border: 2px solid; text-align :center;">
+            <summary style="font-size: x-large;">Administrative</summary>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Ledger Report</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/report/ledgerReport"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/sendMail/sendLedgerReport"></input>
+                        <label class="route-description">Send Ledger Report Mail</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Bank Book</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/report/bankBook"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Register</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/report/register"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Authentication</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/report/authentication"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>User Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/userInfo/userMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/userInfo/save"></input>
+                        <label class="route-description">Save Data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/userInfo/modify"></input>
+                        <label class="route-description">Update Data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/userInfo/delete"></input>
+                        <label class="route-description">Delete Data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>User Role Creation</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET" data-route="/roleCreation"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="roles"></input>
+                        <label class="route-description">Save Data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="roles"></input>
+                        <label class="route-description">Update Data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="roles"></input>
+                        <label class="route-description">Delete Data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Gledger</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET" data-route="/gLedger"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Export Gledger</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/gLedger/exportGledger"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Ageing Report</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/report/supplierPaymentReport"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="supplierPaymentMaster"></input>
+                        <label class="route-description">Save Data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="supplierPaymentMaster"></input>
+                        <label class="route-description">Update Data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="supplierPaymentMaster"></input>
+                        <label class="route-description">Delete Data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/report/printAgeingReport/" data-collection="supplierPaymentMaster"></input>
+                        <label class="route-description">Print</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Letter Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/report/letterMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="letterMaster"></input>
+                        <label class="route-description">Save Data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="letterMaster"></input>
+                        <label class="route-description">Update Data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="letterMaster"></input>
+                        <label class="route-description">Delete Data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET" data-route="/report/printLetter/"
+                            data-collection="letterMaster"></input>
+                        <label class="route-description">Print</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Delivery Challan Reports</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/report/dcReport"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>GST Tools</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/report/GSTTools"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Pending Customer Payments</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/report/pendingCustomerPayments"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Trial Balance</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/report/trialBalance"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Financial Report</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/report/financialReports"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>VA Report</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/report/vaReport"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="vaMaster"></input>
+                        <label class="route-description">Save Data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="vaMaster"></input>
+                        <label class="route-description">Update Data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="vaMaster"></input>
+                        <label class="route-description">Delete Data</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Send Mail</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET" data-route="/sendMail/mail"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/sendMail/sendPOMail"></input>
+                        <label class="route-description">Send PO Mail</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Send DN/CN Mail</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET" data-route="/sendMail/mail"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/sendMail/sendDebitCreditNoteMail"></input>
+                        <label class="route-description">Send DN/CN Mail</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Man Hours Report</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/report/manhoursReport"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                </div>
+            </div>
+
+        </details>
+        <details class="TempHRMModules detailsHeader"
+            style="background-color: rgba(240, 150, 160, 0.705) ; border: 2px solid; text-align :center;">
+            <summary style="font-size: x-large;">Temp HRM</summary>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Attendance</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRM/tempPersonAttendance"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/HRM/tempPersonAttendance"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Temp Employee Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRM/tempEmployeeMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="tempEmployeeMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="tempEmployeeMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="tempEmployeeMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Shift Change TempPerson</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRM/shiftChangeTempPerson"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="shiftChangeTempPerson"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="shiftChangeTempPerson"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="shiftChangeTempPerson"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Temp Person Extra Work</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRM/tempPersonExtraWork"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="tempPersonExtraWork"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="tempPersonExtraWork"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="tempPersonExtraWork"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Temp Person Salary Details</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRM/tempPersonSalaryDetail"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="tempPersonSalaryDetail"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="tempPersonSalaryDetail"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="tempPersonSalaryDetail"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Moulder Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRM/moulderMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="moulderMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="moulderMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="moulderMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Temp Person Register</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRM/tempPersonRegister"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRM/sendEmployeeSignList/"></input>
+                        <label class="route-description">Employee Sign list</label>
+                    </div>
+                </div>
+            </div>
+        </details>
+        <details class="PermanentHRMModule detailsHeader"
+            style="background-color: rgb(227, 174, 131) ; border: 2px solid; text-align :center;">
+            <summary style="font-size: x-large;">Permanent HRM</summary>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Employee Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRMPermanent/employeeMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/HRMPermanent/saveEmployeeMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="employeeMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Attendence</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRMPermanent/attendance"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/HRMPermanent/attendance"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Department Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRMPermanent/departmentMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="departmentMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="departmentMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="departmentMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Increase Leave</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRMPermanent/increaseLeave"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/HRMPermanent/saveIncreaseLeave"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/HRMPermanent/modifyIncreaseLeave"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/HRMPermanent/deleteIncreaseLeave"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Leave Application</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRMPermanent/leaveApplication"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="leaveApplication"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="leaveApplication"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="leaveApplication"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/HRMPermanent/approveLeaveApplication"></input>
+                        <label class="route-description">Approve Leave</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/HRMPermanent/rejectLeaveApplication"></input>
+                        <label class="route-description">Reject Leave</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Extra Work</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRMPermanent/extraWork"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="extraWork"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="extraWork"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="extraWork"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Advance</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRMPermanent/advance"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="advance"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="advance"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="advance"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Leave Authentication</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRMPermanent/leaveAuthentication"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Permanent Person Register</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRMPermanent/permanentPersonRegister"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRMPermanent/dailyShiftRegister/"></input>
+                        <label class="route-description">Print Shift Register</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/HRMPermanent/leaveUpdate"></input>
+                        <label class="route-description">Update Leave</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Permanent Salary Details</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRMPermanent/permanentSalaryDetails"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="permanentSalaryDetails"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="permanentSalaryDetails"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="permanentSalaryDetails"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute" style="width: 20vw !important;">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Salary Reports</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRMPermanent/salaryReports"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRMPermanent/employeeSalarySlip/"></input>
+                        <label class="route-description">Print Employee Salary Slip</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRMPermanent/allEmployeeSalarySlip/"></input>
+                        <label class="route-description">Print All Salary Slip</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRMPermanent/detailEarningAndDeductionReport/"></input>
+                        <label class="route-description">Print Detail Earning/Deduction <br> Report</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Leave Management</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/HRMPermanent/leaveManagement"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/HRMPermanent/leaveManagement/save"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/HRMPermanent/leaveManagement/modify"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/HRMPermanent/leaveManagement/delete"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+        </details>
+        <details class="CRM detailsHeader"
+            style="background-color: rgb(112, 201, 201) ; border: 2px solid; text-align :center;">
+            <summary style="font-size: x-large;">CRM Route</summary>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Customer Industry Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/CRM/customerIndustryMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="customerIndustryMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="customerIndustryMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="customerIndustryMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Product Category Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-collection="productCategoryMaster" data-route="/CRM/productCategoryMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON"
+                            data-collection="productCategoryMaster" data-route="/common/save"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON"
+                            data-collection="productCategoryMaster" data-route="/common/modify"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="productCategoryMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Lead Source Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/CRM/leadSourceMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="leadSourceMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="leadSourceMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="leadSourceMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Sale Man Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/CRM/salesmanMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="salesmanMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="salesmanMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="salesmanMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Reason Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/CRM/reasonMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="reasonMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="reasonMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="reasonMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Material Grade Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/CRM/materialGradeMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="materialGradeMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="materialGradeMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="materialGradeMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Weight Range Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/CRM/wtRangeMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="wtRangeMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="wtRangeMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="wtRangeMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>CRM Account Master</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/CRM/CRMAccountMaster"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/save"
+                            data-collection="CRMAccountMaster"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/modify"
+                            data-collection="CRMAccountMaster"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="CRMAccountMaster"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>Opportunity</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/CRM/opportunity"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST" data-route="/CRM/opportunity/save"
+                            data-collection="opportunity"></input>
+                        <label class="route-description">Save data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="POST"
+                            data-route="/CRM/opportunity/modify" data-collection="opportunity"></input>
+                        <label class="route-description">Update data</label>
+                    </div>
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="COMMON" data-route="/common/delete"
+                            data-collection="opportunity"></input>
+                        <label class="route-description">Delete data</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mainRoute">
+                <summary class="mainRoute-heading" style="font-size: large; font-weight: bold; text-align: left;">
+                    <input type="checkbox" class="select-all largerCheckbox" style="font-size: x-large;">
+                    <a>CRM Dashboard</a>
+                </summary>
+                <div class="selectors">
+                    <div class="description">
+                        <input type="checkbox" class="select-one" data-method="GET"
+                            data-route="/CRM/leadsBoard"></input>
+                        <label class="route-description">View Authority</label>
+                    </div>
+                </div>
+            </div>
+        </details>
+    </div>
+</body>
+
+</html>

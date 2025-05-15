@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Day Three</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+        let isLightOn = true
+        console.log("Type Of  let isLightOn = " + typeof (isLightOn))
+        console.log("The value of isLightOn is = " + isLightOn)
+        let isRaining = false
+        let isHungry = false
+        let isMarried = true
+        let truValue = 4 > 3    // true
+        console.log("Type Of  let truValue = " + typeof (truValue))
+        console.log("The value of truValue is = " + truValue)
+        let falseValue = 4 < 3  // false
+        console.log("Type Of  let falseValue = " + typeof (falseValue))
+        console.log("The value of falseValue is = " + falseValue)
+
+        let firstName
+        console.log("Type Of  let firstName = " + typeof (firstName))
+        console.log("The value of firstName is = " + firstName)
+
+        let first = null
+        console.log("Type Of  let first = " + typeof (first))
+        console.log("The value of first is = " + first)
+    </script>
+    <script>
+        console.log("Operaters ----------------------------")
+        console.log("Assignment Operaters")
+        let x = 2
+        let y = 3
+        console.log("value of x = " + x + " value of y = " + y)
+        x = y
+        console.log("Value of x after x=y is x= " + x + " value of y = " + y)
+        x = 2
+        console.log("value of x = " + x + " value of y = " + y)
+        x += y
+        console.log("Value of x after x+=y is x= " + x + " value of y = " + y)
+        x = 2
+        console.log("value of x = " + x + " value of y = " + y)
+        x -= y
+        console.log("Value of x after x-=y is x= " + x + " value of y = " + y)
+        x = 2
+        console.log("value of x = " + x + " value of y = " + y)
+        x *= y
+        console.log("Value of x after  x*=y is x= " + x + " value of y = " + y)
+        x = 2
+        console.log("value of x = " + x + " value of y = " + y)
+        x /= y
+        console.log("Value of x after x/=y is x= " + x + " value of y = " + y)
+        x = 2
+        console.log("value of x = " + x + " value of y = " + y)
+        x %= y
+        console.log("Value of x after   x%=y is x= " + x + " value of y = " + y)
+        x = 2
+        console.log("value of x = " + x + " value of y = " + y)
+        x **= y
+        console.log("Value of x after   x**=y is = " + x + " value of y = " + y)
+
+    </script>
+    <script>
+        console.log("Operaters--------------------------- ")
+        console.log("Airthmetic Operaters")
+        let numOne = 4
+        let numTwo = 3
+        console.log("The two number are " + numOne + " & " + numTwo)
+        let sum = numOne + numTwo
+        console.log("the sum of two numbers is " + sum)
+        let diff = numOne - numTwo
+        console.log("the difference of two numbers is " + diff)
+        let mult = numOne * numTwo
+        console.log("the multiplication of two numbers is " + mult)
+        let div = numOne / numTwo
+        console.log("the division of two numbers is " + div)
+        let remainder = numOne % numTwo
+        console.log("the reminder of two numbers is " + remainder)
+        let powerOf = numOne ** numTwo
+        console.log("the power of " + numOne + " rase to " + numTwo + " is " + powerOf)
+
+        let l = 250
+        let b = 50
+        console.log('length of the rectangle is ' + l + ' width of rectangle is ' + b + ' area of rectangle is ' + (l * b))
+
+        let r = 25
+        const pi = Math.PI
+
+        console.log("the radious of circle is " + r + " area of circle is " + Math.round(pi * r * r))
+        console.log("the radious of circle is " + r + " circumference of circle is " + Math.round(2 * pi * r))
+        r = '15'
+        l = 150
+        console.log('type of r and l respectivelly ' + typeof (r) + ' & ' + typeof (l))
+        console.log("the radious of cylinder is " + r + " meter length of cylinder " + l + " meter volume of cylinder is " + Math.round(pi * r * r * l) + " metercube")
+    </script>
+    <script>
+        console.log("Operaters--------------------------- ")
+        console.log("Comparison Operaters")
+        console.log("3 > 2 = ")
+        console.log(3 > 2)              // true, because 3 is greater than 2
+        console.log(3 >= 2)             // true, because 3 is greater than 2
+        console.log(3 < 2)              // false,  because 3 is greater than 2
+        console.log(2 < 3)              // true, because 2 is less than 3
+        console.log(2 <= 3)             // true, because 2 is less than 3
+        console.log(3 == 2)             // false, because 3 is not equal to 2
+        console.log(3 != 2)             // true, because 3 is not equal to 2
+        console.log(3 == '3')           // true, compare only value
+        console.log(3 === '3')          // false, compare both value and data type
+        console.log(3 !== '3')          // true, compare both value and data type
+        console.log(3 != 3)             // false, compare only value
+        console.log(3 !== 3)            // false, compare both value and data type
+        console.log(0 == false)         // true, equivalent
+        console.log(0 === false)        // false, not exactly the same
+        console.log(0 == '')            // true, equivalent
+        console.log(0 == ' ')           // true, equivalent
+        console.log(0 === '')           // false, not exactly the same
+        console.log(1 == true)          // true, equivalent
+        console.log(1 === true)         // false, not exactly the same
+        console.log(undefined == null)  // true
+        console.log(undefined === null) // false
+        console.log(NaN == NaN)         // false, not equal
+        console.log(NaN === NaN)        // false
+        console.log(typeof NaN)         // number
+
+        let str1 = 'tomato'
+        let str2 = 'tomato'
+
+        console.log('checking str1 & str2')
+        console.log(str1 === str2)
+
+        console.log('mango'.length == 'avocado'.length)  // false
+        console.log('mango'.length != 'avocado'.length)  // true
+        console.log('mango'.length < 'avocado'.length)   // true
+        console.log('milk'.length == 'meat'.length)      // true
+        console.log('testing')
+        console.log('milk'.length === 'meat'.length)      // true
+        console.log('milk'.length != 'meat'.length)      // false
+        console.log('tomato'.length == 'potato'.length)  // true
+        console.log('testing')
+        console.log('tomato' == 'potato')  // 
+        console.log('python'.length > 'dragon'.length)   // false
+        console.log('0' == true)//false
+
+        str1 = '0'
+        console.log(str1 == true)//false
+
+
+    </script>
+    <script>
+        console.log("if (0) then")
+        if (0) {
+            console.log(" is true")
+        }
+        else {
+            console.log(" is false")
+        }
+        console.log("if ('0') then")
+        if ('0') {
+            console.log(" is true")
+        }
+        else {
+            console.log(" is false")
+        }
+        console.log("if (1) then")
+        if (1) {
+            console.log(" is true")
+        }
+        else {
+            console.log(" is false")
+        }
+        console.log("if (-1) then")
+        if (-1) {
+            console.log(" is true")
+        }
+        else {
+            console.log(" is false")
+        }
+        console.log("if (true) then")
+        if (true) {
+            console.log(" is true")
+        }
+        else {
+            console.log(" is false")
+        }
+        console.log("if (false) then")
+        if (false) {
+            console.log(" is true")
+        }
+        else {
+            console.log(" is false")
+        }
+        console.log("if (\"\") then")
+        if ("") {
+            console.log(" is true")
+        }
+        else {
+            console.log(" is false")
+        }
+        console.log("if (\" \") then")
+        if (" ") {
+            console.log(" is true")
+        }
+        else {
+            console.log(" is false")
+        }
+        console.log("if (null) then")
+        if (null) {
+            console.log(" is true")
+        }
+        else {
+            console.log(" is false")
+        }
+
+        let demo
+        console.log(demo)
+        console.log("if (undefined ) then")
+        if (demo) {
+            console.log(" is true")
+        }
+        else {
+            console.log(" is false")
+        }
+        console.log("if (NaN) then")
+        if (NaN) {
+            console.log(" is true")
+        }
+        else {
+            console.log(" is false")
+        }
+        console.log("if ([]) then")
+        if ([]) {
+            console.log(" is true")
+        }
+        else {
+            console.log(" is false")
+        }
+        console.log("if ([ ]) then")
+        if ([]) {
+            console.log(" is true")
+        }
+        else {
+            console.log(" is false")
+        }
+        console.log("if ({}) then")
+        if ({}) {
+            console.log(" is true")
+        }
+        else {
+            console.log(" is false")
+        }
+        console.log("if ({ }) then")
+        if ({}) {
+            console.log(" is true")
+        }
+        else {
+            console.log(" is false")
+        }
+        console.log("if (['a']) then")
+        if (['a']) {
+            console.log(" is true")
+        }
+        else {
+            console.log(" is false")
+        }
+        console.log("if ([0]) then")
+        if ([0]) {
+            console.log(" is true")
+        }
+        else {
+            console.log(" is false")
+        }
+
+
+        // 20
+        // all numbers divisible by 3 - Fizz
+        // all numbers divisible by 5 - Buzz
+        // Both - FizzBuzz
+        console.log(1)
+
+        let someVariable = null;
+        let a = someVariable || 0;
+        console.log("a", a)
+
+        function getValueofA(someVariable) {
+            if (someVariable == undefined) {
+                return 0
+            }
+            if (someVariable % 5 == 0) {
+                return 5
+            }
+            return someVariable
+        }
+
+        a = someVariable == undefined ? 0 : someVariable;
+
+    </script>
+    <script>
+        // && ampersand operator example
+
+        let check = 4 > 3 && 10 > 5         // true && true -> true
+        console.log("4 > 3 && 10 > 5  ans:- ", check)
+        check = 4 > 3 && 10 < 5         // true && false -> false
+        console.log("4 > 3 && 10 < 5 ans:- ", check)
+        check = 4 < 3 && 10 > 5         // false && true -> false
+        console.log(" 4 < 3 && 10 > 5  ans:- ", check)
+        check = 4 < 3 && 10 < 5         // false && false -> false
+        console.log("4 < 3 && 10 < 5   ans:- ", check)
+
+        // || pipe or operator, example
+
+        check = 4 > 3 || 10 > 5         // true  || true -> true
+        console.log(" 4 > 3 || 10 > 5  ans:- ", check)
+        check = 4 > 3 || 10 < 5         // true  || false -> true
+        console.log(" 4 > 3 || 10 < 5  ans:- ", check)
+        check = 4 < 3 || 10 > 5         // false || true -> true
+        console.log(" 4 < 3 || 10 > 5  ans:- ", check)
+        check = 4 < 3 || 10 < 5         // false || false -> false
+        console.log("4 < 3 || 10 < 5  ans:- ", check)
+
+        //! Negation examples
+
+        check = 4 > 3                     // true
+        console.log("4 > 3  ans:- ", check)
+        check = !(4 > 3)                  //  false
+        console.log("!(4 > 3) ans:- ", check)
+        isLightOn = true
+        console.log("isLightOn ans:- ", isLightOn)
+        let isLightOff = !isLightOn       // false
+        console.log("isLightOff ans:- ", isLightOff)
+        isMarried = !false                // true
+        console.log("!isMarried ans:- ", isMarried)
+    </script>
+    <script>
+        //pre increment
+        let count = 0
+        console.log('value of count before increment ', count) //0
+        console.log("value of count after pre increment (++count) ", ++count)        // 1
+        console.log("value of count after pre increment (count) ", count)          // 1
+
+        //post increment
+        count = 0
+        console.log('value of count before increment ', count)  //0
+        console.log("value of count after post increment (count++) ", count++) //0
+        console.log("value of count after post increment (count) ", count)   //1
+    </script>
+    <script>
+        //pre decrement
+        count = 0
+        console.log('value of count before decrement ', count)
+        console.log("value of count after pre decrement (--count) ", --count)        // -1
+        console.log("value of count after pre decrement (count) ", count)          // -1
+
+        //post decrement
+        count = 0
+        console.log('value of count before decrement ', count)
+        console.log("value of count after post decrement (count--) ", count--)  //0
+        console.log("value of count after post decrement (count) ", count)   //-1
+    </script>
+    <script>
+        //ternary operator
+        isRaining = true
+        isRaining ? console.log('condition is true You need a rain coat.') : console.log('if false No need for a rain coat.')
+
+        isRaining = false
+        isRaining ? console.log(' condition is trueYou need a rain coat.') : console.log(' if false No need for a rain coat.')
+
+        let number = 5
+        number > 0 ? console.log(`${number} is a positive number condition is true`) : console.log(`if false ${number} is a negative number`)
+
+        number = -5
+        number > 0 ? console.log(`${number} is a positive number condition is true`) : console.log(` if false ${number} is a negative number`)
+
+
+    </script>
+    <!-- <script>
+        window.alert('hello from alert!..................')
+        alert('i am learning java script lang. ')
+        alert(656565)
+        alert([[[[[]]]]])
+        alert(null)
+        alert(undefined)
+        alert('a')
+    </script> -->
+    <!-- <script>
+        numOne=prompt('enter a number ','hello')
+        console.log(numOne)
+    </script> -->
+    <script>
+       let agree= confirm('are you sure you want to exit?')
+       console.log(agree)
+    </script>
+</body>
+
+</html>

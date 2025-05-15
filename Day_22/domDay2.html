@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Day 2</title>
+</head>
+
+<body>
+    <!-- <script>
+        let title = document.createElement('h1')
+        title.className = 'title'
+        title.style.fontSize = '24px'
+        title.textContent = 'Creating HTML element DOM Day 2'
+
+        console.log(title)
+    </script> -->
+    <!-- <script>
+        let title
+        for (let i = 0; i < 3; i++) {
+            title = document.createElement('h1')
+            title.className = 'title'
+            title.style.fontSize = '24px'
+            title.textContent = i
+            console.log(title)
+        }
+    </script> -->
+    <script>
+    // creating multiple elements and appending to parent element
+    let title
+    for (let i = 0; i < 10; i++) {
+        title = document.createElement('div')
+        title.className = 'title'
+        // title.style.fontSize = '24px'
+        title.style.width='30px'
+        title.style.height='30px'
+        title.style.flexDirection = "row"
+        title.style.backgroundColor = "yellow"
+        title.textContent = i
+        document.body.appendChild(title)
+    }
+    document.getElementsByTagName("body").style.flexDirection = "row"
+</script>
+</body>
+
+</html>

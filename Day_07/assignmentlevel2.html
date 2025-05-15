@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Assignment Level 2</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <!-- <script>
+        //1. Linear equation is calculated as follows: ax + by + c = 0. Write a function which calculates value of a linear equation, 
+        // solveLinEquation.
+        function solveLinEquation(){
+
+        }
+
+    </script>  -->
+    <!-- <script>
+        //2. Quadratic equation is calculated as follows: ax2 + bx + c = 0. Write a function which calculates value or values of 
+        // a quadratic equation, solveQuadEquation.
+        // console.log(solveQuadratic()) // {0}
+        // console.log(solveQuadratic(1, 4, 4)) // {-2}
+        // console.log(solveQuadratic(1, -1, -2)) // {2, -1}
+        // console.log(solveQuadratic(1, 7, 12)) // {-3, -4}
+        // console.log(solveQuadratic(1, 0, -4)) //{2, -2}
+        // console.log(solveQuadratic(1, -1, 0)) //{1, 0}
+
+        function solveQuadEquation(a,b,c)
+        {
+            // console.log(a,b,c)   
+            if (a==0) {
+                console.log('This is not a Quadratic Euqation')
+                return 0
+            }
+            if (a==undefined||b==undefined||c==undefined) {
+                console.log("0")
+                return 0
+            }
+            let x1 = (-b - Math.sqrt(Math.pow(b, 2)-4 *a*c))/(2*a)
+            let x2 = (-b + Math.sqrt(Math.pow(b, 2)-4 *a*c))/(2*a)
+            if(x1!=x2){
+            console.log(' values of a quadratic equation, ax2 + bx + c = 0. is ',x2,' & ',x1)
+            return 0
+            }
+            console.log(' values of a quadratic equation, ax2 + bx + c = 0. is ',x1)
+
+        }
+        // solveQuadEquation(1,-1,-2)
+        // solveQuadEquation()
+        // solveQuadEquation(1, 0, -4)
+        // solveQuadEquation(1, 4, 4)
+        // solveQuadEquation(1,-1,0)
+    </script> -->
+    <!-- <script>
+        //3. Declare a function name printArray. It takes array as a parameter and it prints out each value of the array.
+        function printArray() {
+            for (let i = 0; i < arguments.length; i++) {
+                console.log(arguments[i])
+            }
+        }
+        let arr = [1, 2, 3, 4, 5, 6]
+        printArray(arr)
+    </script> -->
+    <!-- <script>
+        //4. Write a function name showDateTime which shows time in this format: 08/01/2020 04:08 using the Date object.
+        // showDateTime()
+        // 08/01/2020 04:08
+        function showDateTime() {
+            let now = new Date()
+            let year = now.getFullYear()
+            let month = addZero(now.getMonth() + 1)
+            let date = addZero(now.getDate())
+            let hrs = addZero(now.getHours())
+            let minute = addZero(now.getMinutes())
+            function addZero(params) {
+                if (params < 10) {
+                    params = '0' + params
+                    return params
+                } else {
+                    return params
+                }
+            }
+            console.log(`${date}/${month}/${year} ${hrs}:${minute}`)
+        }
+        showDateTime()
+
+    </script> -->
+    <!-- <script>
+        //5. Declare a function name swapValues. This function swaps value of x to y.
+        // swapValues(3, 4) // x => 4, y=>3
+        // swapValues(4, 5) // x = 5, y = 4
+
+        function swapValues(x,y){
+            console.log('Initial Values Of X =>',x,'& y =>',y)
+            let a 
+            a=x
+            x=y
+            y=a
+            console.log('After Swap Values Of X =>',x,'& y =>',y)
+        }
+        swapValues(4,5)
+    </script> -->
+    <!-- <script>
+        //6.Declare a function name reverseArray. It takes array as a parameter and it returns the reverse of the array (don't use method).
+        // console.log(reverseArray([1, 2, 3, 4, 5]))
+        // //[5, 4, 3, 2, 1]
+        // console.log(reverseArray(['A', 'B', 'C']))
+        // //['C', 'B', 'A']
+        function reverseArray(array) {
+            let newReverseArray = []
+            for (let index = array.length-1; index > -1; index--) {
+                newReverseArray.push(array[index])
+            }
+            console.log( newReverseArray)
+        }
+        let arr = [1, 2, 3, 4, 5, 6]
+
+        reverseArray(['A', 'B', 'C'])
+
+    </script> -->
+    <!-- <script>
+        //7. Declare a function name capitalizeArray. It takes array as a parameter and it returns the - capitalizedarray.
+        function capitalizeArray(array) {
+            let capitalizedarray = []
+            for (let index = 0; index < array.length; index++) {
+                capitalizedarray.push(array[index].toString().toUpperCase())
+            }
+            return capitalizedarray
+        }
+        let arr = [1, 2, 3, 4, 5, 6]
+
+        console.log(capitalizeArray(['a', 'b', 'c']))
+
+    </script> -->
+    <!-- <script>
+        //8. Declare a function name addItem. It takes an item parameter and it returns an array after adding the item 
+        function addItem() {
+            let returnArray = []
+            for (let index = 0; index < arguments.length; index++) {
+                returnArray.push(arguments[index])
+            }
+            return returnArray
+        }
+        
+        let arr =addItem(1,2,3,4,5,6)
+        console.log(arr)
+    </script> -->
+    <!-- <script>
+        //9. Declare a function name removeItem. It takes an index parameter and it returns an array after removing an item
+        function removeItem(array){
+            console.log('Array With Parameter ',array)
+            for (let index = array.length-1; index > -1; index--) {
+                array.pop(index)  
+            }
+            console.log('Removed Item From Array',array)
+        }
+        removeItem([1,2,3,4,5])
+    </script> -->
+    <!-- <script>
+        //10. Declare a function name sumOfNumbers. It takes a number parameter and it adds all the numbers in that range.
+        let sumOfNumbers =(...array)=>{
+            let sum =0
+            for (const iterator of array) {
+                sum+=iterator
+            }
+            return sum
+        }
+        console.log('Sum=',sumOfNumbers(1,2,3,4,5))
+    </script> -->
+    <!-- <script>
+        //11. Declare a function name sumOfOdds. It takes a number parameter and it adds all the odd numbers in that - range.
+        function sumOfOdds(range){
+            let sum=0
+            for (let index = 0; index <= range; index++) {
+                    if (index%2!=0) {
+                        sum+=index
+                    }                
+            }
+            return sum
+        }
+        console.log('The Sum Of Odd Number Up to Range Is = ',sumOfOdds(10))
+    </script> -->
+    <!-- <script>
+        //12. Declare a function name sumOfEven. It takes a number parameter and it adds all the even numbers in that - range.
+        function sumOfEven(range){
+            let sum=0
+            for (let index = 0; index <= range; index++) {
+                    if (index%2==0) {
+                        sum+=index
+                    }                
+            }
+            return sum
+        }
+        console.log('The Sum Of Even Number Up to Range Is = ',sumOfEven(6))
+    </script> -->
+    <!-- <script>
+        //13. Declare a function name evensAndOdds . It takes a positive integer as parameter and it counts 
+        //    number of evens and odds in the number.
+        // evensAndOdds(100);
+        // The number of odds are 50.
+        // The number of evens are 51.
+        function evensAndOdds(range){
+            let countEvenNumber=0
+            let countOddNumber=0
+            for (let index = 0; index <= range; index++) {
+                    if (index%2==0) {
+                       ++countEvenNumber
+                    }  
+                    if (index%2!=0) {
+                       ++countOddNumber
+                    }               
+            }
+            console.log(' The number of odds are',countOddNumber)
+            console.log(' The number of evens are',countEvenNumber)
+        }
+        evensAndOdds(100)
+    </script> -->
+    <!-- <script>
+        //14. Write a function which takes any number of arguments and return the sum of the arguments
+        // sum(1, 2, 3) // -> 6
+        // sum(1, 2, 3, 4) // -> 10
+        let sumOfNumbers =(...array)=>{
+            let sum =0
+            for (const iterator of array) {
+                sum+=iterator
+            }
+            return sum
+        }
+        console.log('Sum of The Arguments Are =',sumOfNumbers(1,2,3,4))
+    </script> -->
+    <!-- <script>
+        //15. Writ a function which generates a randomUserIp.
+        function randomUserIp(){
+            
+            let ip = (Math.floor(Math.random() * 255) + 1) + "." + (Math.floor(Math.random() * 255)) + "." + (Math.floor(Math.random() * 255)) + "." + (Math.floor(Math.random() * 255));
+           return ip
+        }
+        console.log('A Random User Ip',randomUserIp())
+    </script> -->
+    <!-- <script>
+        //16. Write a function which generates a randomMacAddress
+        function abc() {
+            let restr="0123456789ABCDEF".charAt(Math.floor(Math.random() * 16))
+            return restr
+        }
+        function randomMacAddress() {
+            let str = "XX:XX:XX:XX:XX:XX"
+            let replacestr=''
+            pattern = /x/gi
+            for (let index = 0; index < str.length; index++) {
+               replacestr+= str.charAt(index).replace(pattern, abc())
+            }
+            return replacestr
+        }
+        console.log(randomMacAddress())
+    </script> -->
+    <!-- <script>
+        //17. Declare a function name randomHexaNumberGenerator. When this function is called it generates a random hexadecimal number.
+        //  The function return the hexadecimal number.
+        // console.log(randomHexaNumberGenerator());
+        // '#ee33df'
+        function abc() {
+            let restr="0123456789abcdef".charAt(Math.floor(Math.random() * 16))
+            return restr
+        }
+        function randomHexaNumberGenerator(){
+            let randomHexaNumberString='#'
+            for (let index = 0; index < 6; index++) {
+                randomHexaNumberString+=abc()
+            }
+            return randomHexaNumberString
+        }
+        console.log('the hexadecimal number."',randomHexaNumberGenerator(),'"')
+    </script> -->
+    <!-- <script>
+        //18. Declare a function name userIdGenerator. When this function is called it generates seven character id.
+        //     The function return the id.
+        // console.log(userIdGenerator());
+        // 41XTDbE
+        function abc() {
+            let restr="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".charAt(Math.floor(Math.random() * 62))
+            return restr
+        }
+        function userIdGenerator(){
+            let randomUserIdString=''
+            for (let index = 0; index < 7; index++) {
+                randomUserIdString+=abc()
+            }
+            return randomUserIdString
+        }
+        console.log(' The User id.',userIdGenerator())
+    </script> -->
+</body>
+
+</html>

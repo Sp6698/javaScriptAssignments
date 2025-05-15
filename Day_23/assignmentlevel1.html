@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Assignment Level 01</title>
+    <style>
+        .numberInput {
+            margin-top: 10px;
+            border-color: #3feb78;
+            width: 300px;
+            margin-left: 300px;
+        }
+
+        .display {
+            width: 500px;
+            margin-left: 300px;
+            margin-Top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper"></div>
+
+    <script>
+        const mainDiv = document.querySelector('.wrapper')
+        const header = document.createElement('div')
+        header.setAttribute('align', 'center')
+        header.style.color = '#50C878'
+        header.style.fontSize = '32px'
+        header.style.padding = '10px'
+        header.textContent = 'Number Generater'
+        mainDiv.appendChild(header)
+        const subHeader = document.createElement('div')
+        subHeader.setAttribute('align', 'center')
+        subHeader.style.fontSize = '17px'
+        subHeader.style.fontWeight = 'bold'
+        subHeader.textContent = '30DaysOfJavaScript:DOM Day 3'
+        mainDiv.appendChild(subHeader)
+        const auther = document.createElement('div')
+        auther.textContent = 'Shubham Patil'
+        auther.style.fontWeight = 'bold'
+        auther.style.padding = '7px'
+        auther.setAttribute('align', 'center')
+        mainDiv.appendChild(auther)
+        const errorMsg = document.createElement('div')
+        // errorMsg.textContent="hi iudhofjh qrhw fihrgurehw boeriurejb oeur?"
+        errorMsg.style.fontSize = '10px'
+        errorMsg.style.height = 'fit to content'
+        errorMsg.style.marginTop = '10px'
+        errorMsg.style.paddingLeft = '300px'
+        errorMsg.style.color = 'red'
+        mainDiv.appendChild(errorMsg)
+        const numberInput = document.createElement('input')
+        numberInput.classList.add('numberInput')
+        numberInput.id = 'numberInputElement'
+        mainDiv.appendChild(numberInput)
+        const generatorButton = document.createElement('button')
+        generatorButton.textContent = 'Genrate Numbers'
+        generatorButton.style.background = '#50C878'
+        generatorButton.style.marginLeft = '10px'
+        generatorButton.style.border = 'none'
+        generatorButton.style.color = 'white'
+        generatorButton.style.fontSize = '15px'
+        mainDiv.appendChild(generatorButton)
+
+        const displayDiv = document.createElement('div')
+        displayDiv.classList.add('display')
+        displayDiv.id = 'displayNUmbersDiv'
+        mainDiv.appendChild(displayDiv)
+
+        generatorButton.addEventListener('click', () => {
+            let inputValue = numberInput.value
+            // console.log(typeof(inputValue),inputValue.length)
+            if (inputValue.length === 0) {
+                return errorMsg.textContent = 'Enter Number Value On the Input Field to Genrate Number'
+            }
+            if (isNaN(inputValue)) {
+                return errorMsg.textContent = 'Input value must be number'
+            }
+
+            errorMsg.textContent = ''
+            numberGenrater(parseInt(inputValue))
+
+        })
+
+        const numberContainer = document.createElement('div')
+        numberContainer.className = 'numberContainer'
+        numberContainer.style.display = 'flex'
+        numberContainer.style.flexWrap = 'wrap'
+
+
+        function numberGenrater(number) {
+            function isPrime(num) {
+                if (num <= 1) return false
+                if (num <= 3) return true
+                if (num % 2 === 0 || num % 3 === 0) return false
+                for (let i = 5; i * i <= num; i += 6) {
+                    if (num % i === 0 || num % (i + 2) === 0) return false
+                }
+                return true
+            }
+            for (let i = 0; i <= number; i++) {
+                const numberDiv = document.createElement("div")
+                numberDiv.style.width = '50px'
+                numberDiv.style.height = '50px'
+                numberDiv.style.display = 'flex'
+                numberDiv.style.alignItems = 'center'
+                numberDiv.style.justifyContent = 'center'
+                numberDiv.style.margin = '1px'
+                if (i % 2 === 0) {
+                    numberDiv.style.backgroundColor = "green"
+                } else {
+                    numberDiv.style.backgroundColor = "yellow"
+                }
+                if (isPrime(i)) {
+                    numberDiv.style.backgroundColor = "red"
+                }
+                numberDiv.textContent = i
+                numberContainer.appendChild(numberDiv)
+            }
+
+        }
+
+        displayDiv.append(numberContainer)
+    </script>
+</body>
+
+</html>

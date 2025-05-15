@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Assignment Level 2</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+        //1. Develop a small script which generate any number of characters random id:
+        // fe3jo1gl124g
+        // xkqci4utda1lmbelpkm03rba
+        // const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+        // function makeid(length) {
+        //     let result = '';
+        //     const charactersLength = characters.length;
+        //     let counter = 0;
+        //     while (counter < length) {
+        //         result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        //         counter += 1;
+        //     }
+        //     return result;
+        // }
+        // let number = Math.random() * characters.length
+        // let randomId = makeid(number)
+        // console.log('Any number of characters random id:', randomId)
+
+    </script>
+    <!-- <script>
+        //2. Write a script which generates a random hexadecimal number.
+        // '#ee33df'
+        const hexCharacters ='0123456789abcdef'
+        function makeid(length) {
+            let result = '';
+            const charactersLength = hexCharacters.length;
+            let counter = 0;
+            while (counter < length) {
+                result += hexCharacters .charAt(Math.floor(Math.random() * charactersLength));
+                counter += 1;
+            }
+            return result;
+        }
+        let number = Math.random() * hexCharacters.length
+        let randomId = makeid(number)
+        console.log('A random hexadecimal number id:', randomId)
+    </script> -->
+    <!-- <script>
+        //3. Write a script which generates a random rgb color number.
+        // rgb(240,180,80)
+        let r=(Math.round(Math.random() * 256))
+        let g=(Math.round(Math.random() * 256))
+        let b=(Math.round(Math.random() * 256))
+        console.log('rgb(',r,',',g,',',b,')')
+    </script> -->
+    <!-- <script>
+        //4. Using the above countries array, create the following new array.
+        // ["ALBANIA", "BOLIVIA", "CANADA", "DENMARK", "ETHIOPIA", "FINLAND", "GERMANY", "HUNGARY", "IRELAND", "JAPAN", "KENYA"]
+        const countries = ['Albania', 'Bolivia','Canada','Denmark','Ethiopia','Finland','Germany','Hungary','Ireland','Japan','Kenya']
+        console.log(countries)
+        const newArray=[]
+        for (const country of countries) {
+            newArray.push(country.toUpperCase())
+        }
+        console.log(newArray)
+    </script> -->
+    <!-- <script>
+        //5. Using the above countries array, create an array for countries length'.
+        // [7, 7, 6, 7, 8, 7, 7, 7, 7, 5, 5]
+        const countries = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya']
+        console.log(countries)
+        const newArray = []
+        for (const country of countries) {
+            newArray.push(country.length)
+        }
+        console.log(newArray)
+
+    </script> -->
+    <!-- <script>
+        //6. Use the countries array to create the following array of arrays:
+        //     [
+        //     ['Albania', 'ALB', 7],
+        //     ['Bolivia', 'BOL', 7],
+        //     ['Canada', 'CAN', 6],
+        //     ['Denmark', 'DEN', 7],
+        //     ['Ethiopia', 'ETH', 8],
+        //     ['Finland', 'FIN', 7],
+        //     ['Germany', 'GER', 7],
+        //     ['Hungary', 'HUN', 7],
+        //     ['Ireland', 'IRE', 7],
+        //     ['Iceland', 'ICE', 7],
+        //     ['Japan', 'JAP', 5],
+        //     ['Kenya', 'KEN', 5]
+        const countries = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya']
+        // console.log(countries)
+        const newArray=[]
+        for (let index = 0; index < countries.length; index++) {
+             let arr=[]
+             arr.push(countries[index]);
+             arr.push(countries[index].slice(0,3).toUpperCase());
+             arr.push(countries[index].length)
+             newArray.push(arr)
+        }
+       console.log(newArray)
+    </script> -->
+    <!-- <SCRipt>
+        //7. In above countries array, check if there is a country or countries containing the word 'land'. 
+        //  If there are countries containing 'land', print it as array. 
+        //If there is no country containing the word 'land', print 'All these countries are without land'.
+        // ['Finland','Ireland', 'Iceland']
+        const countries = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya', 'Iceland']
+        const arr=[]
+        for (let index = 0; index < countries.length; index++) {
+                if (countries[index].includes('land')) {
+                    arr.push(countries[index])
+                }
+        }
+        if (arr.length>0) {
+            console.log(arr)
+        }else{
+            console.log('All these countries are without land')
+        }
+    </SCRipt> -->
+    <!-- <script>
+        //8. n above countries array, check if there is a country or countries end with a substring 'ia'. 
+        //If there are countries end with, print it as array. 
+        //If there is no country containing the word 'ai', print 'These are countries ends without ia'.
+        // ['Albania', 'Bolivia','Ethiopia']
+        const countries = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya', 'Iceland']
+        const arr=[]
+        for (let index = 0; index < countries.length; index++) {
+                if (countries[index].lastIndexOf('ia')!=-1) {
+                    arr.push(countries[index])
+                }
+        }
+        if (arr.length>0) {
+            console.log(arr)
+        }else{
+            console.log('These are countries ends without ia')
+        }
+
+    </script> -->
+    <!-- <script>
+        //9. Using the above countries array, find the country containing the biggest number of characters.
+        // Ethiopia
+        let maxLenghthOfCountry=0
+        let countryIndex=0
+        const countries = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya', 'Iceland']
+        for (let index = 0; index < countries.length; index++) {
+                if (maxLenghthOfCountry<=countries[index].length) {
+                    maxLenghthOfCountry=countries[index].length
+                    countryIndex=index
+                }
+        }
+        console.log('The country containing the biggest number of characters is',countries[countryIndex])
+    </script> -->
+    <!-- <script>
+        //10. Using the above countries array, find the country containing only 5 characters.
+        // ['Japan', 'Kenya']
+        let maxLenghthOfCountry=5
+        let arr=[]
+        const countries = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya', 'Iceland']
+        for (let index = 0; index < countries.length; index++) {
+                if (maxLenghthOfCountry==countries[index].length) {
+                   arr.push(countries[index])
+                }
+        }
+        console.log('The country containing only 5 characters are',arr)
+
+    </script> -->
+    <!-- <script>
+        //11. Find the longest word in the webTechs array
+        const webTechs = ['HTML','CSS','JavaScript','React','Redux','Node','MongoDB']
+        let maxLenghthOfTech=0
+        let techIndex=0
+        for (let index = 0; index < webTechs.length; index++) {
+                if (maxLenghthOfTech<=webTechs[index].length) {
+                    maxLenghthOfTech=webTechs[index].length
+                    techIndex=index
+                }
+        }
+        console.log('The country containing the biggest number of characters is',webTechs[techIndex])  
+    </script> -->
+    <!-- <script>
+        //12. Use the webTechs array to create the following array of arrays:
+        // [["HTML", 4], ["CSS", 3],["JavaScript", 10],["React", 5],["Redux", 5],["Node", 4],["MongoDB", 7]]
+        const webTechs = ['HTML','CSS','JavaScript','React','Redux','Node','MongoDB']
+        const newArray=[]
+        for (let index = 0; index < webTechs.length; index++) {
+             let arr=[]
+             arr.push(webTechs[index]);
+             arr.push(webTechs[index].length)
+             newArray.push(arr)
+        }
+       console.log(newArray)
+    </script> -->
+    <!-- <script>
+        //13. An application created using MongoDB, Express, React and Node is called a MERN stack app. 
+        //    Create the acronym MERN by using the array mernStack
+        const mernStack = ['MongoDB', 'Express', 'React', 'Node']
+        const newArray=[]
+        for (let index = 0; index < mernStack.length; index++) {
+             let arr=[]
+             arr.push(mernStack[index].charAt(0))
+             newArray.push(arr)
+        }
+       console.log(newArray.toString())
+    </script> -->
+    <!-- <script>
+        //14. Iterate through the array, ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"]
+        //  using a for loop or for of loop and print out the items.
+        const webTechs = ['HTML','CSS','JavaScript','React','Redux','Node','MongoDB']
+        for (const tech of webTechs) {
+            console.log(tech)
+        }
+    </script> -->
+    <!-- <script>
+        //15. This is a fruit array , ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop without using a reverse method.
+        const fruit=['banana', 'orange', 'mango', 'lemon']
+        const reverseFruit =[]
+        for (let index = fruit.length-1; index > -1; index--) {
+            reverseFruit.push(fruit[index])
+        }
+        console.log(fruit)
+        console.log('Reversed array of fruit',reverseFruit)
+    </script> -->
+    <script>
+        //16. Print all the elements of array as shown below.
+        // HTML
+        // CSS
+        // JS
+        // REACT
+        // NODE
+        // EXPRESS
+        // MONGODB
+
+        const fullStack = [['HTML', 'CSS', 'JS', 'React'], ['Node', 'Express', 'MongoDB']]
+        // for (const iterator of fullStack) {
+        //     console.log(iterator)
+        // }
+        for (let index = 0; index < fullStack.length; index++) {
+            for (let i = 0; i < fullStack[index].length; i++) {
+                console.log(fullStack[index][i])                
+            }
+            
+        }
+    </script>
+</body>
+
+</html>

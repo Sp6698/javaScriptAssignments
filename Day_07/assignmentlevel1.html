@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Assignment Level 1</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <!-- <script>
+        //1. Declare a function fullName and it print out your full name.
+        function fullName (){
+            console.log("Shubham Hindurao Patil")
+        }
+        fullName()
+    </script>     -->
+    <!-- <script>
+        //2. Declare a function fullName and now it takes firstName, lastName as a parameter and it returns your full - name.
+        function fullName (firstName,lastName){
+            console.log(`${firstName} ${lastName}`)
+        }
+        fullName('Shubham','Patil')
+    </script> -->
+    <!-- <script>
+        //3. Declare a function addNumbers and it takes two two parameters and it returns sum.
+        function addNumbers (number1,number2){
+            let sum =number1+number2
+            return sum
+        }
+        console.log('The addition of two number is =',addNumbers(4,5))
+    </script> -->
+    <!-- <script>
+        //4. An area of a rectangle is calculated as follows: area = length x width. Write a function which calculates areaOfRectangle.
+        function areaOfRectangle(length,width){
+            let area=length*width
+            return area
+        }
+        console.log('Area of Rectangle is = ',areaOfRectangle(10,5))
+    </script> -->
+    <!-- <script>
+        //5. A perimeter of a rectangle is calculated as follows: perimeter= 2x(length + width). Write a function which calculates perimeterOfRectangle.
+        function perimeterOfRectangle(length,width){
+            let perimeter = 2*(length+width)
+            return perimeter
+        }
+        console.log('The Perimeter Of Rectangle is =',perimeterOfRectangle(10,5))
+    </script> -->
+    <!-- <script>
+        //6. A volume of a rectangular prism is calculated as follows: volume = length x width x height.
+        //  Write a function which calculates volumeOfRectPrism.
+        function volumeOfRectPrism(length,width,height){
+            let volume = length*width*height
+            return volume
+        }
+        console.log('The volume of Rectangular Prism is = ',volumeOfRectPrism(10,5,3))
+    </script> -->
+    <!-- <script>
+        //7. Area of a circle is calculated as follows: area = π x r x r. Write a function which calculates areaOfCircle
+        function areaOfCircle(radius){
+            let area = Math.PI*radius**2
+            return Math.round(area)
+        }
+        console.log('The Area of circle is =',areaOfCircle(5))
+    </script> -->
+    <!-- <script>
+        //8. Circumference of a circle is calculated as follows: circumference = 2πr. Write a function which calculates circumOfCircle
+        function circumOfCircle(radius){
+            let circumference=2*Math.PI*radius
+            return Math.round(circumference)
+        }
+        console.log('The Circumference of Circle is =',circumOfCircle(5))
+    </script> -->
+    <!-- <script>
+        //9. Density of a substance is calculated as follows:density= mass/volume. Write a function which calculates density.
+        function densityOfSubstance(mass,volume){
+            let density =mass/volume
+            return density
+        }
+        console.log("The Density ofSubstance is = ",densityOfSubstance(10,5))
+    </script> -->
+    <!-- <script>
+        //10. Speed is calculated by dividing the total distance covered by a moving object divided by the total amount of time taken.
+        //  Write a function which calculates a speed of a moving object, speed.
+        function speedOfMovingObject(totalDistance,totalTime){
+            let speed=totalDistance/totalTime
+            return Math.round(speed)
+        }
+        console.log('The speed ofMoving Object is =',speedOfMovingObject(100,1.2),'km/hr')
+    </script> -->
+    <!-- <script>
+        //11. Weight of a substance is calculated as follows: weight = mass x gravity. Write a function which calculates weight
+        function weightOfSubstance(mass){
+            const gravity=9.81
+            let weight=gravity*mass
+            return Math.round(weight)
+        }
+        console.log('The Weight of Substance is = ',weightOfSubstance(10))
+    </script> -->
+    <!-- <script>
+        //12. Temperature in oC can be converted to oF using this 
+        // formula: oF = (oC x 9/5) + 32. Write a function which convert oC to oF convertCelsiusToFahrenheit.
+        function convertCelsiusToFahrenheit(celsius){
+            fahernheit = (celsius*(9/5))+32
+            return Math.round(fahernheit)
+        }
+        console.log('The Conversion Of Temperataure Celsius To Fahernheit is ',convertCelsiusToFahrenheit(27),' oF')
+    </script> -->
+    <!-- <script>
+        //13. Body mass index(BMI) is calculated as follows: bmi = weight in Kg / (height x height) in m2. 
+        // Write a function which calculates bmi. BMI is used to broadly define different weight groups in adults 20 years old or older.
+        // Check if a person is underweight, normal, overweight or obese based the information given below.
+
+        // The same groups apply to both men and women.
+        // Underweight: BMI is less than 18.5
+        // Normal weight: BMI is 18.5 to 24.9
+        // Overweight: BMI is 25 to 29.9
+        // Obese: BMI is 30 or more
+        function calculateBMI(weight, height) {
+            let bmi = weight / (height * height)
+            switch (true) {
+                case bmi < 18.5:
+                    console.log('A Person Is Under Weight')
+                    break;
+                case bmi >= 18.5 && bmi <= 24.9:
+                    console.log('A Person Is Normal Weight')
+                    break;
+                case bmi >= 25 && bmi <= 29.9:
+                    console.log('A Person Is Overweight')
+                    break;
+                case bmi >= 30:
+                    console.log('A Person Is Obese')
+                    break;
+                default:
+                    break;
+            }
+        }
+        calculateBMI(83,1.66)
+    </script> -->
+    <!-- <script>
+        //14. Write a function called checkSeason, it takes a month parameter and returns the season:Autumn, Winter, Spring or Summer.
+        function checkSeason(month)
+        {
+             switch (true) {
+            case (month == 12 || month == 2 || month == 1): console.log('the season is Winter.')
+                break;
+            case (month == 3 || month == 4 || month == 5): console.log('the season is Spring.')
+                break;
+            case (month == 6 || month == 7 || month == 8): console.log('the season is Summer.')
+                break;
+            case (month == 9 || month == 10 || month == 11): console.log('the season is Autumn.')
+                break;
+
+            default:console.log('You enter a wrong Month')
+                break;
+        }
+        }
+        checkSeason(12)
+    </script> -->
+    <!-- <script>
+        //15. Math.max returns its largest argument. Write a function findMax that takes three arguments and 
+        //    returns their maximum with out using Math.max method.
+        // console.log(findMax(0, 10, 5))
+        // 10
+        // console.log(findMax(0, -10, -2))
+        // 0
+        function findMax(number1,number2,number3){
+           let max=(Math.max(number1, number3, number2));
+            return max
+        }
+        
+        console.log('Max Number Is = ',findMax(0, -10, -2))
+    </script> -->
+    
+</body>
+
+</html>

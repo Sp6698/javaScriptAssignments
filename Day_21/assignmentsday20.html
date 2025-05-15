@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Assignments</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+
+    <p id="para1">First Para</p>
+    <p id="para2">Second Para</p>
+    <p id="para3">Third Para</p>
+    <p id="para4"> </p>
+
+    <!-- Assignment Level 1 -->
+    <!-- <script>
+        //1. Create an index.html file and put four p elements as above: Get the first paragraph by using document.
+        //   querySelector(tagname) and tag name
+        console.log(" querySelector(tagname) and tag name")
+        let paraTag = document.querySelector('p')
+        console.log(paraTag)
+        paraTag = document.getElementsByTagName('p')
+        console.log(paraTag[0])
+
+        //2. Get each of the the paragraph using document.querySelector('#id') and by their id
+        console.log("paragraph using document.querySelector('#id') and by their id")
+        let paraOne = document.getElementById('para1')
+        console.log(paraOne)
+        let paraTwo = document.getElementById('para2')
+        console.log(paraTwo)
+        let paraThree = document.getElementById('para3')
+        console.log(paraThree)
+        let paraFour = document.getElementById('para4')
+        console.log(paraFour)
+
+        //3. Get all the p as nodeList using document.querySelectorAll(tagname) and by their tag name
+        console.log("all the p as nodeList using document.querySelectorAll(tagname) and by their tag name")
+        let allPTag = document.querySelectorAll('p')
+        allPTag.forEach((ptag) => console.log(ptag))
+
+        
+        //4. Loop through the nodeList and get the text content of each paragraph
+        console.log(" Loop through the nodeList and get the text content of each paragraph")
+        allPTag.forEach((ptag) => console.log(ptag))
+        
+        //5. Set a text content to paragraph the fourth paragraph,Fourth Paragraph
+        paraFour.textContent = 'Para Four'
+        
+        //6. Set id and class attribute for all the paragraphs using different attribute setting methods
+        paraFour.setAttribute('id','idSetedByJS')
+        paraFour.setAttribute('class','classByJS')
+        paraFour.style.backgroundColor='skyblue'
+        paraFour.style.color='white'
+        paraFour.style.fontSize='35px'
+        console.log(paraFour)
+    </script> -->
+    <!-- Assignment Level 2 -->
+    <script>
+        //1. Change stye of each paragraph using JavaScript(eg. color, background, border, font-size, font-family)
+        let allPTag = document.querySelectorAll('p')
+        let paraOne = document.getElementById('para1')
+        let paraTwo = document.getElementById('para2')
+        let paraThree = document.getElementById('para3')
+        let paraFour = document.getElementById('para4')
+
+        // allPTag.forEach((ptag,index) => {
+        //     if (index%2==0) {
+        //         ptag.style.backgroundColor='yellow'
+        //         ptag.style.color='red'
+
+        //     }else{
+        //         ptag.style.backgroundColor='red'
+        //         ptag.style.color='yellow'
+        //     }
+        // })
+        //2. Select all paragraphs and loop through each elements and give the first and third paragraph a color of green,
+        //   and the second and the fourth paragraph a red color
+        allPTag.forEach((ptag, index) => {
+            if (index % 2 == 0) {
+                // ptag.style.backgroundColor = 'yellow'
+                ptag.style.color = 'green'
+
+            } else {
+                // ptag.style.backgroundColor = 'red'
+                ptag.style.color = 'red'
+            }
+        })
+        //3. Set text content, id and class to each paragraph
+        paraOne.textContent = 'Para One'
+        paraTwo.textContent = 'Para Two'
+        paraThree.textContent = 'Para Three'
+        paraFour.textContent = 'Para Four'
+        paraOne.className = 'para'
+        allPTag[1].className = 'para'
+        allPTag[2].className = 'para'
+        paraFour.className = 'para'
+        allPTag.forEach((ptag) => console.log(ptag))
+
+    </script>
+</body>
+
+</html>

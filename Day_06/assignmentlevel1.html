@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Assignment Level 01</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <!-- <script>
+        //1. Iterate 0 to 10 using for loop, do the same using while and do while loop
+        for (let index = 0; index <= 10; index++) {
+            console.log(index)
+        }
+        let i = 0
+        while (i <= 10) {
+            console.log(i)
+            i++
+        }
+        let a=0
+        do {
+            console.log(a)
+            a++
+        } while (a <= 10)
+    </script> -->
+    <!-- <script>
+        //2. Iterate 10 to 0 using for loop, do the same using while and do while loop
+        for (let index = 10; index >= 0; index--) {
+            console.log(index)
+        }
+        let i = 10
+        while (i >= 0) {
+            console.log(i)
+            i--
+        }
+        let a=10
+        do {
+            console.log(a)
+            a--
+        } while (a >= 0)
+    </script> -->
+    <!-- <script>
+        //3. Iterate 0 to n using for loop
+        let n=10
+        for (let index = 0; index <= n; index++) {
+                console.log(index)            
+        }
+    </script> -->
+    <!-- <script>
+        //4. Write a loop that makes the following pattern using console.log():
+        // #
+        // ##
+        // ###
+        // ####
+        // #####
+        // ######
+        // #######
+        let n = 8;
+        let string = "";
+
+        for (let i = 0; i < n; i++) {
+            for (let j = 0; j < i; j++) { 
+                string += "#";
+            }
+            string += "\n";
+        }
+        console.log(string);   
+    </script> -->
+    <!-- <script>
+        //5. Use loop to print the following pattern:
+
+            // 0 x 0 = 0
+            // 1 x 1 = 1
+            // 2 x 2 = 4
+            // 3 x 3 = 9
+            // 4 x 4 = 16
+            // 5 x 5 = 25
+            // 6 x 6 = 36
+            // 7 x 7 = 49
+            // 8 x 8 = 64
+            // 9 x 9 = 81
+            // 10 x 10 = 100
+
+            for (let index = 0; index < 11; index++) {
+               console.log(`${index} x ${index} = ${index*index}`) 
+            }
+    </script> -->
+    <!-- <SCRipt>
+        //6. Using loop print the following pattern
+
+            // i    i^2   i^3
+            // 0    0     0
+            // 1    1     1
+            // 2    4     8
+            // 3    9     27
+            // 4    16    64
+            // 5    25    125
+            // 6    36    216
+            // 7    49    343
+            // 8    64    512
+            // 9    81    729
+            // 10   100   1000
+            console.log("i  i^2  i^3")
+            for (let index = 0; index < 11; index++) {
+               console.log(`${index}   ${index**2}   ${index**3}`) 
+            }
+    </SCRipt> -->
+    <!-- <script>
+        //7. Use for loop to iterate from 0 to 100 and print only even numbers
+        for (let index = 0; index <=100; index++) {
+            if (index==1) {
+                console.log(index)
+            }
+           if (index%2==0) {
+            console.log(index)
+           }
+        }
+    </script> -->
+    <!-- <script>
+        //8. Use for loop to iterate from 0 to 100 and print only odd numbers
+        for (let index = 0; index <=100; index++) {
+           if (index%2!=0) {
+            console.log(index)
+           }
+        }
+    </script> -->
+    <!-- <script>
+        //9. Use for loop to iterate from 0 to 100 and print only prime numbers
+        function isPrime(n) {
+            if (n == 0 || n == 1) {
+                return false
+            }
+            let m = n / 2
+            for (let index = 2; index <= m; index++) {
+                if (n % index == 0) {
+                    return false
+                }
+
+            }
+            return true;
+        }
+        for (let i = 0; i <= 100; i++) {
+            if (isPrime(i)) {
+                console.log(i);
+            }
+        }
+    </script> -->
+    <!-- <script>
+        //10. Use for loop to iterate from 0 to 100 and print the sum of all numbers.
+        // The sum of all numbers from 0 to 100 is 5050.
+        let sum=0
+        for (let index = 0; index <=100; index++) {
+                sum +=index            
+        }
+        console.log('The sum of all numbers from 0 to 100 is',sum)
+    </script> -->
+    <!-- <script>
+        //11. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
+        // The sum of all evens from 0 to 100 is 2550. And the sum of all odds from 0 to 100 is 2500.
+        let sumOfEven =0
+        let sumOfOdd =0
+        for (let index = 0; index <=100; index++) {
+                if (index%2==0) {
+                    sumOfEven +=index
+                }
+                if (index%2!=0) {
+                    sumOfOdd+=index
+                }
+        }
+        console.log('he sum of all evens from 0 to 100 is',sumOfEven,' And the sum of all odds from 0 to 100 is',sumOfOdd   )
+    </script> -->
+    <!-- <script>
+        //12.Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds. 
+        // Print sum of evens and sum of odds as array
+        // [2550, 2500]
+        let sumOfEven =0
+        let sumOfOdd =0
+        for (let index = 0; index <=100; index++) {
+                if (index%2==0) {
+                    sumOfEven +=index
+                }
+                if (index%2!=0) {
+                    sumOfOdd+=index
+                }
+        }
+        const arr=[sumOfEven,sumOfOdd]
+        console.log('sum of evens and sum of odds as array',arr)
+    </script> -->
+    <!-- <script>
+        //13. Develop a small script which generate array of 5 random numbers
+        const array=[]
+        for (let index = 0; index < 5; index++){
+            array[index]=Math.random()
+        }
+        console.log(array)
+    </script> -->
+    <!-- <script>
+        //14. Develop a small script which generate array of 5 random numbers and the numbers must be unique
+        const array=[]
+        for (let index = 0; index < 5; index++){
+            array[index]=Math.random()
+        }
+        console.log(array)
+    </script> -->
+    <script>
+        //15.Develop a small script which generate a six characters random id:
+        // 5j2khz
+        function makeid(length) {
+            let result = '';
+            const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+            const charactersLength = characters.length;
+            let counter = 0;
+            while (counter < length) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+                counter += 1;
+            }
+            return result;
+        }
+
+        console.log('A six characters random id:',makeid(6));
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

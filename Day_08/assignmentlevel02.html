@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Assignment Level 02</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+        const users = {
+            Alex: {
+                email: 'alex@alex.com',
+                skills: ['HTML', 'CSS', 'JavaScript'],
+                age: 20,
+                isLoggedIn: false,
+                points: 30
+            },
+            Asab: {
+                email: 'asab@asab.com',
+                skills: ['HTML', 'CSS', 'JavaScript', 'Redux', 'MongoDB', 'Express', 'React', 'Node'],
+                age: 25,
+                isLoggedIn: false,
+                points: 50
+            },
+            Brook: {
+                email: 'daniel@daniel.com',
+                skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
+                age: 30,
+                isLoggedIn: true,
+                points: 50
+            },
+            Daniel: {
+                email: 'daniel@alex.com',
+                skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
+                age: 20,
+                isLoggedIn: false,
+                points: 40
+            },
+            John: {
+                email: 'john@john.com',
+                skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+                age: 20,
+                isLoggedIn: true,
+                points: 50
+            },
+            Thomas: {
+                email: 'thomas@thomas.com',
+                skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+                age: 20,
+                isLoggedIn: false,
+                points: 40
+            },
+            Paul: {
+                email: 'paul@paul.com',
+                skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node'],
+                age: 20,
+                isLoggedIn: false,
+                points: 40
+            }
+        }
+    </script>
+    <!-- <script>
+        //1. Find the person who has many skills in the users object.
+        let key = Object.keys(users)
+        let user, count = 0
+        for (const iterator of key) {
+            if (count <= users[iterator]['skills'].length) {
+                user = iterator
+                count = users[iterator]['skills'].length
+            }
+        }
+        console.log('The Person who has many skills Is', user)
+
+    </script> -->
+    <!-- <script>
+        //2. Count logged in users, count users having greater than equal to 50 points from the following object.
+        let key = Object.keys(users)
+        let  countLogedUser = 0
+        let  countPointmore50User = 0
+        for (const iterator of key) {
+            if (users[iterator]['isLoggedIn']) {
+                ++countLogedUser
+            }
+        }
+        for (const iterator of key) {
+            if (users[iterator]['points']>=50) {
+                ++countPointmore50User
+            }
+        }
+        console.log('The logged in users Is', countLogedUser)
+        console.log('The users having greater than equal to 50 points Is', countPointmore50User)
+    </script> -->
+    <!-- <script>
+        //3. Find people who are MERN stack developer from the users object
+        let developers=[]
+        for (const person in users) {
+            if (users[person]['skills'].includes('MongoDB')&&
+            users[person]['skills'].includes('React')&&
+            users[person]['skills'].includes('Express')&&
+            users[person]['skills'].includes('Node')) {
+           developers.push(person)
+        }
+    }
+    console.log('MERN stack developer are ',developers)
+    </script> -->
+    <!-- <script>
+        //4. Set your name in the users object without modifying the original users object
+        users['shubham']={
+                email: 'shubhampatil@gmail.com',
+                skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node'],
+                age: 26,
+                isLoggedIn: true,
+                points: 70
+            }
+            console.log(users)
+    </script> -->
+    <!-- <script>
+        //5. Get all keys or properties of users object
+        let keysArray =Object.keys(users)
+        console.log(keysArray)
+    </script> -->
+    <!-- <script>
+        //6. Get all the values of users object
+        let valuesArray=Object.values(users)
+        console.log(valuesArray)
+    </script> -->
+    <script>
+        //7. Use the countries object to print a country name, capital, populations and languages.
+    </script>
+</body>
+
+</html>

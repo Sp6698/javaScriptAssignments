@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Assignment Level 2</title>
+    <style>
+        .headerDiv {
+
+            width: 50%;
+            height: 80px;
+            text-align: center;
+            margin: auto;
+            margin-top: 100px;
+            padding: 10px;
+            box-shadow: 2px 2px 2px 2px #af9898;
+        }
+
+        .displayDiv {
+            width: 10%;
+            height: 80px;
+            text-align: center;
+            margin: auto;
+            margin-top: 20px;
+            padding-top: 10px;
+            box-shadow: 2px 2px 2px 2px #af9898;
+            color: #50C878;
+            font-size: 40px;
+        }
+        span{
+            color: #50C878;
+            font-size: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper"></div>
+    <script>
+        const mainDiv = document.querySelector('.wrapper')
+        const headerDiv = document.createElement('div')
+        headerDiv.setAttribute('align', 'centre')
+        headerDiv.classList.add('headerDiv')
+        mainDiv.appendChild(headerDiv)
+        const header = document.createElement('h1')
+        header.setAttribute('align', 'centre')
+        header.textContent = 'Pres Any KeybordKey'
+        headerDiv.appendChild(header)
+        const displayDiv = document.createElement('div')
+        displayDiv.classList.add('displayDiv')
+        
+        document.body.addEventListener('keyup', e => {
+            let key=e.key
+            let keyPressed=e.keyCode
+            header.innerHTML=`You Pressed <span>${key}</span>   `
+            displayDiv.textContent=keyPressed
+
+            mainDiv.appendChild(displayDiv)
+      })
+    </script>
+</body>
+
+</html>

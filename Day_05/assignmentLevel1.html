@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Assignment Level 1</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <!-- <script>
+        const countries = [
+            'Albania',
+            'Bolivia',
+            'Canada',
+            'Denmark',
+            'Ethiopia',
+            'Finland',
+            'Germany',
+            'Hungary',
+            'Ireland',
+            'Japan',
+            'Kenya'
+        ]
+
+        const webTechs = [
+            'HTML',
+            'CSS',
+            'JavaScript',
+            'React',
+            'Redux',
+            'Node',
+            'MongoDB'
+        ]
+    </script> -->
+    <!-- <script>
+        //1. Declare an empty array;
+        const arr = Array()
+        console.log(arr)
+    </script> -->
+    <!-- <script>
+        //2. Declare an array with more than 5 number of elements
+        const arr =[1,2,3,4,5,6]
+        console.log(arr)
+    </script> -->
+    <!-- <script>
+        //3. Find the length of your array
+        const arr =[1,2,3,4,5,6]
+        console.log(arr.length)
+    </script> -->
+    <!-- <script>
+        //4. Get the first item, the middle item and the last item of the array
+        const arr =[1,2,3,4,5,6]
+        console.log(arr)
+        console.log('First index ',arr[0])
+        console.log('Middle index ',arr[arr.length/2])
+        console.log('Last index ',arr[arr.length-1])
+    </script> -->
+    <!-- <script>
+        //5. Declare an array called mixedDataTypes,
+        // put different data types in the array and find the length of the array. The array size should be greater than 5
+        const arr =[6,'shubham',"City:kolhapur",NaN,true,false,0,'end']
+        console.log(arr)
+        console.log('Length of array ',arr.length)
+    </script> -->
+    <!-- <script>
+        //6. Declare an array variable name itCompanies and 
+        //assign initial values Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon
+        const itCompanies=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon']
+        console.log(itCompanies)
+    </script> -->
+    <!-- <script>
+        //7. Print the array using console.log()
+        const itCompanies=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon']
+        console.log(itCompanies)
+    </script> -->
+    <!-- <script>
+        //8.Print the number of companies in the array
+        const itCompanies=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon']
+        console.log(' number of companies in the array is ',itCompanies.length)
+    </script> -->
+    <!-- <script>
+        //9. Print the first company, middle and last company
+        const itCompanies=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon']
+        console.log('First Company  ',itCompanies[0])
+        console.log('Middle Company ',itCompanies[Math.floor(itCompanies.length/2)])
+        console.log('Last Company ',itCompanies[itCompanies.length-1])
+    </script> -->
+    <!-- <script>
+        //10. Print out each company
+        const itCompanies=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon']
+        console.log(itCompanies)
+        console.log(itCompanies[0])
+        console.log(itCompanies[1])
+        console.log(itCompanies[2])
+        console.log(itCompanies[3])
+        console.log(itCompanies[4])
+        console.log(itCompanies[5])
+        console.log(itCompanies[6])
+    </script> -->
+    <!-- <script>
+        //11.Change each company name to uppercase one by one and print them out
+        const itCompanies=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon']
+        console.log(itCompanies)
+        itCompanies[0]=itCompanies[0].toString().toUpperCase()
+        itCompanies[1]=itCompanies[1].toString().toUpperCase()
+        itCompanies[2]=itCompanies[2].toString().toUpperCase()
+        itCompanies[3]=itCompanies[3].toString().toUpperCase()
+        itCompanies[4]=itCompanies[4].toString().toUpperCase()
+        itCompanies[5]=itCompanies[5].toString().toUpperCase()
+        itCompanies[6]=itCompanies[6].toString().toUpperCase()
+        console.log(itCompanies)
+    </script> -->
+    <!-- <script>
+        //12. Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM,Oracle and Amazon are big IT companies.
+        const itCompanies=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon']
+        console.log(itCompanies.toString())
+    </script> -->
+    <!-- <script>
+        //13. Check if a certain company exists in the itCompanies array.
+        // If it exist return the company else return a company is not found
+        const itCompanies=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon']
+        if (itCompanies.includes('Facebook')) {
+                console.log('Facebook')
+        }else{
+            console.log(' company is not found')
+        }
+    </script> -->
+    <!-- <script>
+        //14.Filter out companies which have more than one 'o' without the filter method
+        const itCompanies=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon']
+        let pattern=/o/gi
+        console.log('No of o in ', itCompanies[0],' company is ', itCompanies[0].toString().match(pattern))
+        console.log('No of o in ', itCompanies[1],' company is ', itCompanies[2].toString().match(pattern))
+        console.log('No of o in ', itCompanies[2],' company is ', itCompanies[1].toString().match(pattern))
+        console.log('No of o in ', itCompanies[3],' company is ', itCompanies[3].toString().match(pattern))
+        console.log('No of o in ', itCompanies[4],' company is ', itCompanies[4].toString().match(pattern))
+        console.log('No of o in ', itCompanies[5],' company is ', itCompanies[5].toString().match(pattern))
+        console.log('No of o in ', itCompanies[6],' company is ', itCompanies[6].toString().match(pattern))
+        console.log('Maximum o in the company are "',itCompanies[0],itCompanies[1],itCompanies[2],'"')
+    </script> -->
+    <!-- <script>
+        //15. Sort the array using sort() method
+        const itCompanies=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon']
+        console.log(itCompanies)
+        console.log('Sorting the array ',itCompanies.sort())
+    </script> -->
+    <!-- <script>
+        //16. Reverse the array using reverse() method
+        const itCompanies=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon']
+        console.log(itCompanies)
+        console.log('reversed array ',itCompanies.reverse())
+    </script> -->
+    <!-- <script>
+        //17. Slice out the first 3 companies from the array
+        const itCompanies=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon']
+        console.log(itCompanies)
+        console.log(' Slice out the first 3 companies from the array ',itCompanies.slice(0,3))
+    </script> -->
+    <!-- <script>
+        //18. Slice out the last 3 companies from the array
+        const itCompanies=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon']
+        console.log(itCompanies)
+        let a=(itCompanies.length)-3
+        console.log(' Slice out the last 3 companies from the array ',itCompanies.slice(a))
+    </script> -->
+    <!-- <script>
+        //19. Slice out the middle IT company or companies from the array
+        const itCompanies=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon']
+        console.log(itCompanies)
+        console.log(' Slice out the middle IT companies from the array ',itCompanies.slice(1,itCompanies.length-1))
+    </script> -->
+    <!-- <script>
+        //20. Remove the first IT company from the array
+        const itCompanies=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon']
+        console.log(itCompanies)
+        itCompanies.shift()
+        console.log(itCompanies)
+    </script> -->
+    <!-- <script>
+        //21. Remove the middle IT company or companies from the array
+        const itCompanies=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon']
+        console.log(itCompanies)
+        itCompanies.splice(3,1)
+        console.log(itCompanies)
+    </script> -->
+    <!-- <script>
+        //22. Remove the last IT company from the array
+        const itCompanies=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon']
+        console.log(itCompanies)
+        itCompanies.pop()
+        console.log(itCompanies)
+    </script> -->
+    <script>
+        //23. Remove all IT companies
+        const itCompanies=['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle','Amazon']
+        console.log(itCompanies)
+        itCompanies.splice(0)
+        console.log('Remove all IT companies ',itCompanies)
+    </script>
+</body>
+</html>

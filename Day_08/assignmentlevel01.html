@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Assignment Level 01</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+        //1. Create an empty object called dog
+        const dog = {}
+        //2. Print the the dog object on the console
+        console.log('Type of dog', typeof (dog))
+        //3. Add name, legs, color, age and bark properties for the dog object. The bark property is a method which return woof woof
+        dog.name = "Sheru"
+        dog.legs = 4
+        dog.color = 'Gold And Black'
+        dog.age = 10
+        dog.brak = function () {
+            return "woof woof"
+        }
+        //4. Get name, legs, color, age and bark value from the dog object
+        console.log("Name Of Dog", dog.name)
+        console.log('Legs Of Dog', dog.legs)
+        console.log('Color Of Dog', dog.color)
+        console.log('Age Of the Dog', dog.age)
+        console.log('The Brak Of Dog', dog.brak())
+        //5. Set new properties the dog object: breed, getDogInfo
+        dog.breed = 'German Shepherd'
+        dog.getDogInfo = function () {
+            console.log("Name Of Dog", dog.name,'Legs Of Dog', dog.legs,'Color Of Dog', dog.color,'Age Of the Dog', dog.age)
+            console.log('The Brak Of Dog', dog.brak(),'The Breed of dog is',dog.breed)
+        }
+        console.log(dog.getDogInfo())
+    </script>
+</body>
+
+</html>

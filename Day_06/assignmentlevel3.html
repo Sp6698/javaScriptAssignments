@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Assignment Level 3</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <!-- <script>
+        //1. Copy countries array(Avoid mutation)
+        const countries = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya', 'Iceland']
+        const array =[]
+        for (const iterator of countries) {
+            array.push(iterator)
+        }
+        console.log(array)
+    </script> -->
+    <!-- <script>
+        //2. Arrays are mutable. Create a copy of array which does not modify the original. 
+        // Sort the copied array and store in a variable sortedCountries
+        const countries = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya', 'Iceland']
+        const sortedCountries =[]
+        for (const iterator of countries) {
+            sortedCountries.push(iterator)
+        }
+        sortedCountries.sort()
+        console.log(countries)
+        console.log(sortedCountries)
+    </script> -->
+    <!-- <script>
+        //3. Sort the webTechs array and mernStack array
+        const webTechs = [
+            'HTML',
+            'CSS',
+            'JavaScript',
+            'React',
+            'Redux',
+            'Node',
+            'MongoDB'
+        ]
+
+        const mernStack = ['MongoDB', 'Express', 'React', 'Node']
+        webTechs.sort()
+        mernStack.sort()
+        console.log(mernStack)
+        console.log(webTechs)
+    </script> -->
+    <!-- <script>
+        //4. Extract all the countries contain the word 'land' from the countries array and print it as array
+        const countries = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya', 'Iceland']
+        const arr = []
+        for (let index = 0; index < countries.length; index++) {
+            if (countries[index].includes('land')) {
+                arr.push(countries[index])
+            }
+        }
+        console.log(arr)
+
+    </script> -->
+    <!-- <script>
+        //5. Find the country containing the hightest number of characters in the countries array
+        let maxLenghthOfCountry=0
+        let countryIndex=0
+        const countries = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya', 'Iceland']
+        for (let index = 0; index < countries.length; index++) {
+                if (maxLenghthOfCountry<=countries[index].length) {
+                    maxLenghthOfCountry=countries[index].length
+                    countryIndex=index
+                }
+        }
+        console.log('The country containing the hightest number of characters is',countries[countryIndex])
+    </script> -->
+    <!-- <script>
+        //7. Extract all the countries containing only four characters from the countries array and print it as array
+        let maxLenghthOfCountry=4
+        let arr=[]
+        const countries = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany','Hungary', 'Ireland', 'Japan', 'Kenya', 'Iceland']
+        for (let index = 0; index < countries.length; index++) {
+                if (maxLenghthOfCountry==countries[index].length) {
+                   arr.push(countries[index])
+                }
+        }
+        if (arr.length>0) {
+            console.log('The country containing only 4 characters are',arr)
+        }else{
+            console.log('The array has no country of four character')
+        }
+    </script> -->
+    <script>
+        //8. Extract all the countries containing two or more words from the countries array and print it as array
+
+    </script>
+    <script>
+        //9. Reverse the countries array and capitalize each country and stored it as an array
+        const countries = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya', 'Iceland']
+        const array =[]
+        console.log(countries)
+        for (let index = countries.length-1; index > -1; index--) {
+            array.push(countries[index].toUpperCase())
+        }
+        console.log(array)
+    </script>
+</body>
+
+</html>

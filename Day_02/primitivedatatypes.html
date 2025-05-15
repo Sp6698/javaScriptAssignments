@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Primitive data types</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+
+
+
+    <script>
+        //Primitive data type
+        let numOne = 3
+        let numTwo = 3
+
+        console.log(numOne == numTwo)      // true
+
+        let js = 'JavaScript'
+        let py = 'Python'
+
+        console.log(js == py)             //false 
+
+        let lightOn = true
+        let lightOff = false
+
+        console.log(lightOn == lightOff) // false
+
+        //Non Primitive Data Types
+
+        let nums = [1, 2, 3]
+        console.log("Before change:- " + nums)
+        nums[1] = 10
+        console.log("After change:- " + nums)
+
+        let num = [1, 2, 3]
+        let numbers = [1, 2, 3]
+
+        console.log(num == numbers)  // false
+
+        let userOne = {
+            name: 'Shubham',
+            role: 'Hindurao',
+            country: 'Patil'
+        }
+
+        let userTwo = {
+            name: 'Shubham',
+            role: 'Hindurao',
+            country: 'Patil'
+        }
+
+        console.log(userOne == userTwo) // false
+
+        let nums2=nums;
+        console.log(nums2==nums)
+
+    </script>
+    <script>
+        //Declaring Number Data Types
+        console.log("Declaring Number Data Types")
+        let age=26
+        const gravity=9.81
+        let mass =70
+        let weight =58.43
+
+        const boillingPoint =100
+        const bodyTemp = 37
+        console.log(age,gravity,mass,weight,boillingPoint,bodyTemp)
+    </script>
+</body>
+
+</html>

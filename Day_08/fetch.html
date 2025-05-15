@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let countriesData = [];
+        async function getCountryData() {
+            try {
+                
+            } catch (error) {
+                
+            } 
+            const url = 'https://restcountries.com/v2/all' // countries api
+            let response=await fetch(url)
+            let responseOne=await fetch(url)
+            let dataOne=await responseOne.json()
+            let data =await response.json()
+            countriesData= data
+            console.log('NEw Fetched data',dataOne)
+            console.log(data)
+
+
+        }
+                  
+         getCountryData()
+        
+        console.log('Globaly country data',countriesData)
+        //         const url = 'https://restcountries.com/v2/all' // countries api
+        //         let countriesData =[];
+
+        // fetch(url)
+        //   .then(response => response.json()) // accessing the API data as JSON
+        //   .then(data => {
+        //     // getting the data
+        //     countriesData = data
+        //     console.log(data)
+        //     //code 
+
+        //   })
+        //   .catch(error => console.error("opps error occoured", error))
+
+        //   console.log("countries data",countriesData);
+        // handling error if something wrong happens
+    </script>
+</body>
+
+</html>

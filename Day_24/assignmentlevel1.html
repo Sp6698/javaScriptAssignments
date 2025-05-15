@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Solar System</title>
+    <style>
+        .bgImg {
+            background-image: url("/images/galaxy.gif")
+        }
+
+        .headerDiv,
+        .inputDiv {
+            text-align: center;
+            height: 20%;
+            margin-top: 50px;
+        }
+
+        select {
+            width: 150px;
+            height: 20px;
+            margin-left: 5px;
+        }
+
+        .calculateButton {
+            background-color: grey;
+            color: white;
+            border: none;
+            height: 20px;
+            margin-left: 5px;
+        }
+
+        .displayDiv {
+            margin: auto;
+            /* padding-left: 250px; */
+            width: 450px;
+            height: 300px;
+            margin-top: 20px;
+            display: flex;
+
+        }
+
+        .errorDiv {
+            /* margin-top: 75px; */
+            padding-left: 20px;
+            color: rgb(251, 251, 251);
+            width: 300px;
+            height: 50px;
+
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
+
+        /* .displayDiv:c */
+    </style>
+
+</head>
+
+<body>
+    <div class="wrapper"></div>
+    <script>
+        //render function()
+
+        //event listener  - logic in different function
+        abc();
+        function abc(){
+            console.log("abc")
+        }
+
+        document.body.classList.add('bgImg')
+        const mainDiv = document.querySelector('.wrapper')
+        const headerDiv = document.createElement('div')
+        headerDiv.classList.add('headerDiv')
+        mainDiv.appendChild(headerDiv)
+        const header = document.createElement('h1')
+        header.style.color = 'white'
+        header.textContent = 'Calculate a weight of an object on a planet'
+        headerDiv.appendChild(header)
+        const inputDivs = document.createElement('div')
+        inputDivs.classList.add('inputDiv')
+        mainDiv.appendChild(inputDivs)
+        const weightInput = document.createElement('input')
+        weightInput.placeholder = 'Mass in kilogram'
+        weightInput.setAttribute('type', 'text')
+        inputDivs.appendChild(weightInput)
+        const planetSelect = document.createElement('select')
+        // planetInput.setAttribute('type','text')
+        inputDivs.appendChild(planetSelect)
+        const optionDefault = document.createElement("option")
+        optionDefault.value = '--select planet--'
+        optionDefault.text = '--select planet--'
+        optionDefault.selected = true
+        optionDefault.disabled = true
+        planetSelect.appendChild(optionDefault)
+        const planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Moon", "Pluto"]
+        planets.forEach(planet => {
+            const option = document.createElement("option")
+            option.value = planet.toUpperCase()
+            option.text = planet.toUpperCase()
+            planetSelect.appendChild(option)
+        })
+        const calculateWeight = document.createElement('button')
+        calculateWeight.textContent = 'Calculate Weight'
+        calculateWeight.classList.add('calculateButton')
+        inputDivs.appendChild(calculateWeight)
+
+        const displayDiv = document.createElement('div')
+        mainDiv.appendChild(displayDiv)
+        const error = document.createElement('p')
+        error.classList.add('errorDiv')
+        const planetDiv = document.createElement('Img')
+        const weightDiv = document.createElement('div')
+        weightDiv.style.textAlign = 'center'
+        weightDiv.style.paddingTop = '20px'
+        weightDiv.style.fontSize='30px'
+
+        calculateWeight.addEventListener('click', validateInputs)
+        // console.log(planetSelect.value)
+        function validateInputs(e) {
+            displayDiv.classList.add('displayDiv')
+            if (weightInput.value == '') {
+                error.innerText = 'MASS Is Required'
+                planetDiv.setAttribute('src', 'none')
+                return displayDiv.appendChild(error)
+            }
+            if (isNaN(weightInput.value)) {
+                error.innerText = 'MASS Is in Number Only'
+                return displayDiv.appendChild(error)
+            }
+            if (planetSelect.value == '--select planet--') {
+                error.innerText = 'Select planet'
+                return displayDiv.appendChild(error)
+            }
+            calculateWeightFunction()
+        }
+
+        function calculateWeightFunction() {
+            const mass = parseFloat(weightInput.value);
+            const planet = planetSelect.value;
+
+            const gravityMap = {
+                mercury: 3.7,
+                venus: 8.87,
+                earth: 9.81,
+                mars: 3.71,
+                jupiter: 24.79,
+                saturn: 10.44,
+                uranus: 8.69,
+                neptune: 11.15,
+                moon: 1.625,
+                pluto:0.62,
+            };
+            const planetUrl = `/images/${planet.toLowerCase()}.png`
+            const gravity = gravityMap[planet.toLowerCase()];
+            const weight = mass * gravity;
+            planetDiv.setAttribute('src', planetUrl)
+            error.textContent = `The weight of the object on  ${planet} is .`;
+            weightDiv.textContent = `${weight.toFixed(2)} N`
+            error.appendChild(weightDiv)
+            displayDiv.appendChild(planetDiv)
+            displayDiv.appendChild(error)
+        }
+
+        // calculateWeight.removeEventListener('click',validateInputs)
+    </script>
+</body>
+
+</html>

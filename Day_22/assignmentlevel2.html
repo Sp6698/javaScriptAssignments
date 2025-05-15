@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Assignment Level 2</title>
+    <style>
+        .countryDiv {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        h1,
+        h3,p {
+            text-align: center;
+        }
+
+        .countriesDiv {
+            padding-top: 7%;
+            padding-left: 8%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+
+        const countriesAPI = 'https://restcountries.com/v2/all'
+        const getCountries = async () => {
+            try {
+
+                const response = await fetch(countriesAPI)
+                const countries = await response.json()
+                let countriesLength = Array.from(countries).length
+                
+                const maindiv = document.createElement('div')
+
+                const heading = document.createElement('h1')
+                heading.innerHTML = 'WORLD COUNTRIES LIST'
+
+                const description=document.createElement('p')
+                description.textContent='30Days Of JavaScript:DOM-Day-2'
+                
+                
+                const subHeading = document.createElement('h3')
+                subHeading.innerHTML = `Total Number Of Countries: ${countriesLength}`
+
+                const countriesDiv = document.createElement('div')
+                countriesDiv.classList.add('countriesDiv')
+
+                document.body.appendChild(maindiv)
+                maindiv.appendChild(heading)
+                maindiv.appendChild(subHeading)
+                maindiv.appendChild(description)
+                maindiv.appendChild(countriesDiv)
+
+                for (const country in countries) {
+                    const countryDiv = document.createElement("div")
+                    countryDiv.classList.add('countryDiv')
+                    countryDiv.style.width = '10%'
+                    countryDiv.style.height = '150px'
+                    countryDiv.style.display = 'flex'
+                    countryDiv.style.alignItems = 'center'
+                    countryDiv.style.justifyContent = 'center'
+                    countryDiv.style.margin = '1px'
+                    countryDiv.textContent = countries[country]['name']
+                    countriesDiv.appendChild(countryDiv)
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getCountries()
+    </script>
+</body>
+
+</html>
